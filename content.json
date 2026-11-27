@@ -1,0 +1,46 @@
+{
+  "sub": "우리 둘의 공유 비서실",
+  "greet": "오늘도 소금이가 대기 중이에요",
+  "schedNote": "공유 일정만 여기에 올라와요. 개인 일정과 사적인 소식은 각자 비서실에서 조용히 챙겨요.",
+  "routines": "<div class=\"card\" style=\"padding:15px 16px\"><div style=\"display:flex;align-items:center;gap:9px\"><span style=\"font-size:20px\">⚙️</span><div><div style=\"font-size:14.5px;font-weight:800;letter-spacing:-.3px\">비서실 자동 루틴 9개</div><div style=\"font-size:11.8px;color:var(--ink2);margin-top:2px\">말만 하면 시간도, 횟수도 바로 바꿀 수 있어요.</div></div></div></div><ul style=\"list-style:none;margin:0;padding:0\"><li class=\"rt\"><div class=\"rt-ico\">☀️</div><div class=\"rt-body\"><div class=\"rt-name\">아침 브리핑<span class=\"pill\">매일</span></div><div class=\"rt-time\">매일 07:30</div><div class=\"rt-desc\">오늘 일정과 날씨를 한 번에 정리해요</div></div></li><li class=\"rt\"><div class=\"rt-ico\">🌂</div><div class=\"rt-body\"><div class=\"rt-name\">날씨·우산 체크<span class=\"pill\">매일</span></div><div class=\"rt-time\">매일 08:00</div><div class=\"rt-desc\">비나 눈이 오는 날은 미리 알려 드려요</div></div></li><li class=\"rt\"><div class=\"rt-ico\">💧</div><div class=\"rt-body\"><div class=\"rt-name\">물 마시기 알림<span class=\"pill\">매일</span></div><div class=\"rt-time\">매일 10:00 · 15:00</div><div class=\"rt-desc\">바쁜 시간에 잊지 않게 살짝 알려 드려요</div></div></li><li class=\"rt\"><div class=\"rt-ico\">🍚</div><div class=\"rt-body\"><div class=\"rt-name\">점심 메뉴 정하기<span class=\"pill\">평일</span></div><div class=\"rt-time\">평일 11:30</div><div class=\"rt-desc\">오늘 점심 후보를 몇 가지 골라 와요</div></div></li><li class=\"rt\"><div class=\"rt-ico\">📅</div><div class=\"rt-body\"><div class=\"rt-name\">주간 일정 정리<span class=\"pill\">월</span></div><div class=\"rt-time\">월요일 09:00</div><div class=\"rt-desc\">이번 주 일정을 한데 모아 정리해요</div></div></li><li class=\"rt\"><div class=\"rt-ico\">🧺</div><div class=\"rt-body\"><div class=\"rt-name\">주말 집안일 나누기<span class=\"pill\">토</span></div><div class=\"rt-time\">토요일 10:00</div><div class=\"rt-desc\">이번 주 집안일을 둘이 나눠 봐요</div></div></li><li class=\"rt\"><div class=\"rt-ico\">🛒</div><div class=\"rt-body\"><div class=\"rt-name\">장보기 목록 정리<span class=\"pill\">일</span></div><div class=\"rt-time\">일요일 20:00</div><div class=\"rt-desc\">살 것과 집에 있는 것을 같이 정리해요</div></div></li><li class=\"rt\"><div class=\"rt-ico\">🎵</div><div class=\"rt-body\"><div class=\"rt-name\">기분 전환 추천<span class=\"pill\">금</span></div><div class=\"rt-time\">금요일 18:00</div><div class=\"rt-desc\">주말에 볼 것·들을 것을 골라 와요</div></div></li><li class=\"rt\"><div class=\"rt-ico\">🌙</div><div class=\"rt-body\"><div class=\"rt-name\">하루 마무리<span class=\"pill\">매일</span></div><div class=\"rt-time\">매일 22:30</div><div class=\"rt-desc\">내일 할 일을 미리 챙겨 두고 인사해요</div></div></li></ul><p class=\"foot-note\">지금은 잠시 쉬고 있는 루틴은 목록에 넣지 않았어요. 다시 켜고 싶으면 말해 주세요.</p>",
+  "rooms": "<div class=\"room\" data-room=\"cmd\" hidden><div class=\"item\"><span class=\"emo\">☀️</span><div class=\"txt\"><div class=\"name\">오늘의 브리핑 <span class=\"pill\">매일 07:30</span></div><div class=\"desc\">오늘 일정·날씨·알림을 한 번에 정리해 드려요.</div></div></div><div class=\"item\"><span class=\"emo\">📌</span><div class=\"txt\"><div class=\"name\">이번 주 할 일 <span class=\"pill done\">진행 중</span></div><div class=\"desc\">이번 주에 끝낼 일을 모아 두었어요. 끝난 일은 바로 지워요.</div></div></div><div class=\"item\"><span class=\"emo\">🔔</span><div class=\"txt\"><div class=\"name\">알림 설정 <span class=\"pill wait\">설정</span></div><div class=\"desc\">알림 시간과 횟수는 말만 하면 바로 바뀌어요.</div></div></div><div class=\"item\"><span class=\"emo\">🧾</span><div class=\"txt\"><div class=\"name\">기록 보관 <span class=\"pill done\">기록</span></div><div class=\"desc\">지난 알림과 전해 온 소식을 날짜별로 모아 둬요.</div></div></div></div><div class=\"room\" data-room=\"meet\" hidden><div class=\"item\"><span class=\"emo\">🗓️</span><div class=\"txt\"><div class=\"name\">같이 보는 일정 <span class=\"pill\">공유</span></div><div class=\"desc\">둘 다 챙겨야 하는 일정만 따로 모아 두었어요.</div></div></div><div class=\"item\"><span class=\"emo\">💬</span><div class=\"txt\"><div class=\"name\">전할 말 <span class=\"pill\">메모</span></div><div class=\"desc\">서로에게 전할 말은 여기에 남겨 두세요. 말이 어긋나지 않게 챙겨요.</div></div></div><div class=\"item\"><span class=\"emo\">☕</span><div class=\"txt\"><div class=\"name\">만나는 날 <span class=\"pill wait\">조율</span></div><div class=\"desc\">만날 날과 시간은 서로 편한 때로 맞춰요.</div></div></div><div class=\"item\"><span class=\"emo\">📋</span><div class=\"txt\"><div class=\"name\">함께 정한 것 <span class=\"pill done\">기록</span></div><div class=\"desc\">한 번 정한 약속은 여기에 남겨 두고 다시 확인해요.</div></div></div></div><div class=\"room\" data-room=\"lounge\" hidden><div class=\"item\"><span class=\"emo\">🌿</span><div class=\"txt\"><div class=\"name\">쉬어 가기 <span class=\"pill\">언제든</span></div><div class=\"desc\">바쁜 날엔 잠깐 쉬어 가도 괜찮아요. 알림은 조용히 줄여 둘게요.</div></div></div><div class=\"item\"><span class=\"emo\">🎬</span><div class=\"txt\"><div class=\"name\">볼거리 <span class=\"pill done\">추천</span></div><div class=\"desc\">주말에 볼 영화·드라마를 몇 가지 골라 와요.</div></div></div><div class=\"item\"><span class=\"emo\">🎵</span><div class=\"txt\"><div class=\"name\">들을거리 <span class=\"pill done\">추천</span></div><div class=\"desc\">기분에 맞는 노래를 몇 곡 골라 와요.</div></div></div><div class=\"item\"><span class=\"emo\">🌙</span><div class=\"txt\"><div class=\"name\">조용히 <span class=\"pill wait\">알림 없음</span></div><div class=\"desc\">힘든 날엔 말해 주세요. 소금이가 조용히 챙기고 있을게요.</div></div></div></div>",
+  "roomsMeta": {
+    "cmd": {
+      "title": "🎯 지휘실",
+      "sub": "오늘 할 일과 알림을 정리하는 방"
+    },
+    "meet": {
+      "title": "🏛️ 회의실",
+      "sub": "둘이 같이 보는 일정과 전할 말"
+    },
+    "lounge": {
+      "title": "☕ 라운지",
+      "sub": "잠깐 쉬어 가는 방"
+    }
+  },
+  "events": [
+    {
+      "d": "2026-11-27",
+      "t": "비서실 공유 시작",
+      "c": "비서실",
+      "cat": "home",
+      "m": "이제 GitHub 저장소에서 같이 고칠 수 있어요"
+    },
+    {
+      "d": "2026-12-25",
+      "t": "크리스마스",
+      "c": "쉬는 날",
+      "cat": "holiday",
+      "m": "하루 비워 두기"
+    },
+    {
+      "d": "2026-12-31",
+      "t": "한 해 마무리",
+      "c": "쉬는 날",
+      "cat": "holiday",
+      "m": "올해 기록 정리"
+    }
+  ],
+  "memoTitle": "공유 메모장",
+  "foot": "소금 비서실 · 내용은 저장소의 content.json에서 함께 고쳐요"
+}
