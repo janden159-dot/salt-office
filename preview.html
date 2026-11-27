@@ -441,6 +441,7 @@
   .frow .f-main{flex:1;min-width:0}
   .frow .f-name{font-size:13px;font-weight:800;letter-spacing:-.2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;line-height:1.35}
   .frow .f-sub{font-size:11.5px;color:var(--ink2);margin-top:2px;line-height:1.45;word-break:break-word}
+  .f-acts{display:flex;align-items:flex-start;gap:5px;flex:0 0 auto}
   .frow.off{opacity:.52}
   .tsw{flex:0 0 auto;width:44px;height:26px;border-radius:999px;border:1.5px solid #e2d2bc;background:#f2e9dc;position:relative;cursor:pointer;padding:0;font:inherit;transition:background .2s,border-color .2s}
   .tsw::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.18);transition:transform .2s}
@@ -1488,8 +1489,7 @@ function openToon(t) {
   const wrap = el("div");
   const tags = el("div", "d-tags");
   tags.appendChild(el("span", "pill", toonGenreText(t.g)));
-  tags.appendChild(el("span", "pill " + (t.done ? "done" : "wait"), t.done ? "완결" : "연재 중"));
-  tags.appendChild(el("span", "pill wait", t.st));
+  tags.appendChild(el("span", "pill " + (t.done ? "done" : "wait"), t.st));
   wrap.appendChild(tags);
   wrap.appendChild(el("p", "d-p", t.sum));
   wrap.appendChild(el("div", "d-box", "📌 " + t.point));
@@ -1702,10 +1702,10 @@ function dateRow(it) {
   row.appendChild(el("span", "f-emo", it.em || "🎡"));
   const main = el("div", "f-main");
   const name = el("div", "f-name", it.title);
-  if (it.done) name.appendChild(el("span", "pill done", "다녀옴"));
   main.appendChild(name);
   main.appendChild(el("div", "f-sub", dateCatText(it.cat) + (it.sub ? " · " + it.sub : "")));
   row.appendChild(main);
+  const acts = el("div", "f-acts");
   if (it.done) {
     main.appendChild(starRow(Number(it.rate) || 0, (r) => { it.rate = r; dateSave(); renderDateList(); }));
     main.appendChild(el("div", "f-sub", it.memo ? "💬 " + it.memo : "한줄 후기를 남겨 보세요"));
@@ -1731,7 +1731,7 @@ function dateRow(it) {
     ed.type = "button";
     ed.setAttribute("aria-label", it.title + " 후기 수정");
     ed.addEventListener("click", () => { editor.hidden = !editor.hidden; if (!editor.hidden) inp.focus(); });
-    row.appendChild(ed);
+    acts.appendChild(ed);
   }
   const sw = el("button", "tsw" + (it.done ? " on" : ""));
   sw.type = "button";
@@ -1747,7 +1747,7 @@ function dateRow(it) {
   const swWrap = el("div", "tsw-wrap");
   swWrap.appendChild(sw);
   swWrap.appendChild(el("div", "tsw-cap", it.done ? "다녀옴" : "가봤어요"));
-  row.appendChild(swWrap);
+  acts.appendChild(swWrap);
   const del = el("button", "fdel", "✕");
   del.type = "button";
   del.setAttribute("aria-label", it.title + " 삭제");
@@ -1757,7 +1757,8 @@ function dateRow(it) {
     renderDateList();
     toast("목록에서 지웠어요");
   });
-  row.appendChild(del);
+  acts.appendChild(del);
+  row.appendChild(acts);
   return row;
 }
 function renderDateList() {
