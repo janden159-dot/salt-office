@@ -498,6 +498,96 @@
   .toast.show{opacity:1;transform:translate(-50%,0)}
   body.theme-basic .room-hero,body.theme-basic .pick,body.theme-basic .note-card{background:#fff;border-color:#e7e7e3}
   body.theme-basic .pick .pk-tip,body.theme-basic .d-box{background:#fafafa}
+
+  /* ── 🤫 비밀의 방 (숨은 진입 · 이 기기에만 저장) ── */
+  .brandtap{display:flex;align-items:center;gap:10px;flex:1;min-width:0;cursor:default;
+    -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation}
+  body.sr-locked{overflow:hidden}
+  .sr-room{position:fixed;inset:0;z-index:130;display:none;overflow-y:auto;-webkit-overflow-scrolling:touch;color:#f7eef9;
+    background:
+      radial-gradient(120% 55% at 18% 0%,#57445f 0%,rgba(87,68,95,0) 62%),
+      radial-gradient(90% 45% at 100% 100%,#3f3149 0%,rgba(63,49,73,0) 60%),
+      linear-gradient(180deg,#3b3145,#241f2b)}
+  .sr-room.open{display:block;animation:srIn .18s ease}
+  @keyframes srIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .sr-inner{max-width:460px;margin:0 auto;padding:calc(12px + env(safe-area-inset-top)) 14px calc(28px + env(safe-area-inset-bottom))}
+  .sr-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+  .sr-title{font-size:18px;font-weight:900;letter-spacing:-.4px}
+  .sr-headbtns{display:flex;gap:6px}
+  .sr-hbtn{font:inherit;font-size:11.5px;font-weight:800;color:#f7eef9;background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.18);padding:8px 10px;border-radius:12px;cursor:pointer;white-space:nowrap}
+  .sr-hbtn:active{transform:scale(.96)}
+  .sr-hbtn-lock{background:linear-gradient(160deg,#f2c2d2,#d792ac);border-color:transparent;color:#3b2430;box-shadow:0 6px 16px rgba(215,146,172,.28)}
+  .sr-banner{font-size:11.7px;line-height:1.55;color:#f0e4f5;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.14);border-radius:15px;padding:11px 12px;margin-bottom:14px;word-break:keep-all}
+  .sr-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:15px 14px;margin-bottom:14px;
+    box-shadow:0 10px 26px rgba(20,14,26,.22)}
+  .sr-card h3{margin:0 0 11px;font-size:14px;font-weight:900;letter-spacing:-.3px}
+  .sr-dday{background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.20);border-radius:16px;padding:11px 13px;margin-bottom:11px}
+  .sr-big{font-size:17px;font-weight:900;letter-spacing:-.4px;color:#ffd7e4}
+  .sr-small{font-size:11.6px;line-height:1.55;color:#d9cbe2;margin-top:3px}
+  .sr-small.sr-on{color:#ffc7d8;font-weight:700}
+  .sr-quick{display:flex;gap:8px;margin-bottom:12px}
+  .sr-btn{font:inherit;font-size:12.4px;font-weight:800;color:#3b2430;background:linear-gradient(160deg,#f6d8e2,#e2a8bf);
+    border:none;border-radius:14px;padding:11px 12px;cursor:pointer;flex:1;box-shadow:0 6px 16px rgba(226,168,191,.20)}
+  .sr-btn:active{transform:scale(.97)}
+  .sr-btn.ghost{background:rgba(255,255,255,.10);color:#f7eef9;border:1px solid rgba(255,255,255,.20);box-shadow:none}
+  .sr-lab{font-size:11.3px;font-weight:800;color:#cbb9d6;margin:12px 0 6px}
+  .sr-line{display:flex;gap:6px;align-items:center}
+  .sr-in,.sr-sel,.sr-ta{font:inherit;font-size:13px;color:#f7eef9;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.20);border-radius:13px;padding:9px 11px;outline:none;color-scheme:dark;min-width:0}
+  .sr-in:focus,.sr-sel:focus,.sr-ta:focus{border-color:#e2a8bf;background:rgba(255,255,255,.12)}
+  .sr-line .sr-in{flex:1}
+  .sr-sel{flex:0 0 auto;font-weight:700}
+  .sr-ta{width:100%;margin-top:8px;resize:vertical;line-height:1.55}
+  .sr-ta::placeholder,.sr-in::placeholder{color:#a898b4}
+  .sr-mini{font:inherit;font-size:12.2px;font-weight:800;color:#3b2430;background:#f0d3de;border:none;border-radius:12px;padding:9px 12px;cursor:pointer;flex:0 0 auto}
+  .sr-mini.ghost{background:rgba(255,255,255,.12);color:#f7eef9}
+  .sr-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2px}
+  .sr-tag{font:inherit;font-size:12px;font-weight:700;color:#e8dbef;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:7px 11px;cursor:pointer}
+  .sr-tag.on{color:#3b2430;background:linear-gradient(160deg,#f6d8e2,#e2a8bf);border-color:transparent;font-weight:900}
+  .sr-list{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .sr-item{display:flex;align-items:flex-start;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);
+    border-radius:14px;padding:10px 11px}
+  .sr-item-main{flex:1;min-width:0}
+  .sr-item-t{font-size:12.8px;font-weight:800;letter-spacing:-.2px}
+  .sr-item-s{font-size:11.5px;color:#cbb9d6;margin-top:2px;word-break:keep-all}
+  .sr-item-n{font-size:11.8px;color:#e8dbef;margin-top:4px;word-break:keep-all;line-height:1.5}
+  .sr-x{flex:0 0 auto;font:inherit;font-size:12px;line-height:1;color:#d4c3de;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:7px 8px;cursor:pointer}
+  .sr-x:active{transform:scale(.94)}
+  .sr-empty{font-size:11.8px;color:#b3a3bf;line-height:1.55;padding:8px 2px;list-style:none;word-break:keep-all}
+  .sr-moods{display:flex;flex-wrap:wrap;gap:6px}
+  .sr-mood{font:inherit;font-size:17px;line-height:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;padding:7px 8px;cursor:pointer}
+  .sr-mood.on{background:linear-gradient(160deg,#f6d8e2,#e2a8bf);border-color:transparent;box-shadow:0 4px 12px rgba(226,168,191,.28)}
+  .sr-memo-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+  .sr-memo-mood{font-size:15px}
+  .sr-memo-at{font-size:10.8px;color:#b3a3bf;font-weight:700}
+  .sr-memo-tx{font-size:12.6px;line-height:1.6;color:#f3e9f7;white-space:pre-wrap;word-break:break-word}
+  .sr-mrow2{display:flex;gap:6px;margin-top:8px}
+  .sr-foot{padding:4px 2px 8px}
+  .sr-toggle{display:flex;align-items:center;gap:9px;font-size:12.4px;font-weight:700;color:#e3d6ec;cursor:pointer}
+  .sr-toggle input{width:18px;height:18px;accent-color:#e2a8bf}
+  .sr-tiny{font-size:10.9px;line-height:1.6;color:#a898b4;margin:10px 0 0;word-break:keep-all}
+  .sr-say{position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));transform:translate(-50%,16px);opacity:0;z-index:200;
+    background:rgba(28,22,34,.96);color:#ffe9f1;font-size:12.4px;font-weight:800;padding:10px 16px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.16);box-shadow:0 10px 24px rgba(0,0,0,.36);transition:opacity .2s ease,transform .2s ease;
+    pointer-events:none;max-width:86%;text-align:center}
+  .sr-say.show{opacity:1;transform:translate(-50%,0)}
+  .sr-modal{position:fixed;inset:0;z-index:150;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(16,12,22,.66)}
+  .sr-modal-card{width:100%;max-width:330px;background:linear-gradient(168deg,#4b3d55,#322b3c);border:1px solid rgba(255,255,255,.16);
+    border-radius:22px;padding:20px 18px 18px;color:#f7eef9;box-shadow:0 20px 44px rgba(0,0,0,.45)}
+  .sr-modal-t{margin:0 0 6px;font-size:16px;font-weight:900;letter-spacing:-.3px}
+  .sr-modal-d{margin:0 0 14px;font-size:11.9px;line-height:1.6;color:#d9cbe2;word-break:keep-all}
+  .sr-form{display:flex;flex-direction:column;gap:10px}
+  .sr-lab2{display:block;font-size:11.4px;font-weight:800;color:#cbb9d6}
+  .sr-lab2 .sr-in{display:block;width:100%;margin-top:5px;font-size:15px;letter-spacing:2px}
+  .sr-err{margin:0;font-size:11.6px;font-weight:700;color:#ffb3c9;line-height:1.5}
+  .sr-mrow{display:flex;gap:8px;margin-top:4px}
+  .sr-mrow .sr-btn{font-size:12.6px}
+  .sr-card > .sr-btn{margin-top:10px}
 </style>
 </head>
 <body>
@@ -515,10 +605,12 @@
 <div class="app">
   <div class="topwrap">
   <header class="topbar">
-    <div class="logo">🧂</div>
-    <div class="brand">
-      <h1>소금 비서실</h1>
-      <div class="sub"><span class="dot"></span><span id="subName">로그인 필요</span></div>
+    <div class="brandtap" id="brandTap">
+      <div class="logo">🧂</div>
+      <div class="brand">
+        <h1>소금 비서실</h1>
+        <div class="sub"><span class="dot"></span><span id="subName">로그인 필요</span></div>
+      </div>
     </div>
     <div class="status"><span class="dot"></span>대기 중</div>
   </header>
@@ -1816,6 +1908,646 @@ $("#dateAddForm").addEventListener("submit", (e) => {
 $$("#quickRooms button").forEach((b) => {
   b.addEventListener("click", () => activate(b.getAttribute("data-screen")));
 });
+
+/* ══════════════════ 🤫 비밀의 방 (이 기기에만 저장 · 서버 전송 없음) ══════════════════ */
+(function secretRoom() {
+  const KEY = { hash: "sr-v1-hash", cycle: "sr-v1-cycle", cond: "sr-v1-cond", memo: "sr-v1-memo", auto: "sr-v1-auto" };
+  const TAP_MS = 1200;
+  const WD = ["일", "월", "화", "수", "목", "금", "토"];
+  const TAGS = ["피곤", "예민", "배 아픔", "무기력", "좋음", "두통", "붓기", "잠 부족"];
+  const MOODS = ["😊", "🥰", "😌", "😐", "😔", "😢", "😡", "😴", "🫠", "🤍"];
+  const NO_CRYPTO = "이 브라우저에서는 비밀번호를 안전하게 저장할 수 없어요. https 주소로 열어 주세요.";
+
+  let room = null;
+  let opened = false;
+  let autoLock = lsGet(KEY.auto) !== "off";
+  let moodPick = "😊";
+  let editMemo = null;
+  let condTags = [];
+  let modalEl = null;
+
+  /* ── 날짜·해시 도구 ── */
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function dstr(d) { const t = d || new Date(); return t.getFullYear() + "-" + pad2(t.getMonth() + 1) + "-" + pad2(t.getDate()); }
+  function pdate(s) { const p = String(s || "").split("-"); return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2])); }
+  function dadd(s, n) { const d = pdate(s); d.setDate(d.getDate() + n); return dstr(d); }
+  function dfmt(s) { const d = pdate(s); return (d.getMonth() + 1) + "월 " + d.getDate() + "일 (" + WD[d.getDay()] + ")"; }
+  function ddiff(a, b) { return Math.round((pdate(a).getTime() - pdate(b).getTime()) / 86400000); }
+  function validDate(s) { return /^\d{4}-\d{2}-\d{2}$/.test(String(s || "")) && !isNaN(pdate(s).getTime()); }
+  function dtfmt(ms) { const d = new Date(ms || Date.now()); return d.getFullYear() + "." + pad2(d.getMonth() + 1) + "." + pad2(d.getDate()) + " " + pad2(d.getHours()) + ":" + pad2(d.getMinutes()); }
+  function hexOf(buf) { const b = new Uint8Array(buf); let s = ""; for (let i = 0; i < b.length; i++) s += (b[i] < 16 ? "0" : "") + b[i].toString(16); return s; }
+  async function hashPw(pw) {
+    if (!(window.crypto && window.crypto.subtle && typeof TextEncoder !== "undefined")) throw new Error("no-crypto");
+    const raw = new TextEncoder().encode("sr-v1::" + pw);
+    return hexOf(await window.crypto.subtle.digest("SHA-256", raw));
+  }
+
+  /* ── 이 방 안에서만 쓰는 알림 ── */
+  let sayTimer = 0;
+  function say(msg) {
+    let t = document.getElementById("srSay");
+    if (!t) { t = document.createElement("div"); t.id = "srSay"; t.className = "sr-say"; document.body.appendChild(t); }
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(sayTimer);
+    sayTimer = setTimeout(function () { t.classList.remove("show"); }, 2000);
+  }
+
+  /* ── 비밀번호 모달 ── */
+  function closeModal() {
+    if (modalEl && modalEl.parentNode) modalEl.parentNode.removeChild(modalEl);
+    modalEl = null;
+  }
+  function openModal(cfg) {
+    closeModal();
+    const wrap = document.createElement("div");
+    wrap.className = "sr-modal";
+    const card = document.createElement("div");
+    card.className = "sr-modal-card";
+    const title = document.createElement("h4");
+    title.className = "sr-modal-t";
+    title.textContent = cfg.title;
+    card.appendChild(title);
+    if (cfg.desc) {
+      const desc = document.createElement("p");
+      desc.className = "sr-modal-d";
+      desc.textContent = cfg.desc;
+      card.appendChild(desc);
+    }
+    const form = document.createElement("form");
+    form.className = "sr-form";
+    const inputs = {};
+    const fields = cfg.fields || [];
+    fields.forEach(function (f) {
+      const lab = document.createElement("label");
+      lab.className = "sr-lab2";
+      lab.textContent = f.label;
+      const inp = document.createElement("input");
+      inp.className = "sr-in";
+      inp.type = "password";
+      inp.autocomplete = "off";
+      inp.setAttribute("autocapitalize", "off");
+      inp.setAttribute("autocorrect", "off");
+      inp.spellcheck = false;
+      inp.placeholder = f.ph || "";
+      inputs[f.key] = inp;
+      lab.appendChild(inp);
+      form.appendChild(lab);
+    });
+    const msg = document.createElement("p");
+    msg.className = "sr-err";
+    msg.hidden = true;
+    form.appendChild(msg);
+    const row = document.createElement("div");
+    row.className = "sr-mrow";
+    const cancel = document.createElement("button");
+    cancel.type = "button";
+    cancel.className = "sr-btn ghost";
+    cancel.textContent = "취소";
+    const ok = document.createElement("button");
+    ok.type = "submit";
+    ok.className = "sr-btn";
+    ok.textContent = cfg.submit || "확인";
+    row.appendChild(cancel);
+    row.appendChild(ok);
+    form.appendChild(row);
+    card.appendChild(form);
+    wrap.appendChild(card);
+    /* 모달을 연 손가락의 click이 오버레이에 닿아 바로 닫히지 않도록 pointerdown으로만 닫아요 */
+    wrap.addEventListener("pointerdown", function (e) { if (e.target === wrap) closeModal(); });
+    cancel.addEventListener("click", function () { closeModal(); });
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const val = {};
+      Object.keys(inputs).forEach(function (k) { val[k] = inputs[k].value; });
+      ok.disabled = true;
+      const label = ok.textContent;
+      ok.textContent = "확인 중…";
+      let err = null;
+      try { err = await cfg.onSubmit(val); } catch (x) { err = "잠시 후 다시 시도해 주세요."; }
+      if (err) {
+        ok.disabled = false;
+        ok.textContent = label;
+        msg.textContent = err;
+        msg.hidden = false;
+        const first = fields.length ? inputs[fields[0].key] : null;
+        if (first) { try { first.focus(); first.select(); } catch (x2) {} }
+      } else {
+        closeModal();
+      }
+    });
+    document.body.appendChild(wrap);
+    modalEl = wrap;
+    const firstInp = fields.length ? inputs[fields[0].key] : null;
+    if (firstInp) setTimeout(function () { try { firstInp.focus(); } catch (e) {} }, 60);
+  }
+
+  function enter() {
+    if (opened) return;
+    if (gate && gate.classList.contains("show")) return;
+    if (lsGet(KEY.hash)) startUnlock();
+    else startSetup();
+  }
+  function startSetup() {
+    openModal({
+      title: "비밀번호 설정",
+      desc: "이 방에 들어갈 비밀번호를 정해 주세요. 4자리 이상이면 돼요. 이 기기에만 남고 어디에도 보내지 않아요.",
+      fields: [{ key: "a", label: "새 비밀번호", ph: "4자리 이상" }, { key: "b", label: "한 번 더 입력" }],
+      submit: "저장하고 들어가기",
+      onSubmit: async function (v) {
+        if (String(v.a).length < 4) return "4자리 이상으로 정해 주세요.";
+        if (v.a !== v.b) return "두 번 입력한 비밀번호가 달라요.";
+        let h = "";
+        try { h = await hashPw(v.a); } catch (e) { return NO_CRYPTO; }
+        lsSet(KEY.hash, h);
+        srOpen();
+        return null;
+      }
+    });
+  }
+  function startUnlock() {
+    openModal({
+      title: "비밀의 방",
+      desc: "비밀번호를 입력하면 방이 열려요.",
+      fields: [{ key: "a", label: "비밀번호" }],
+      submit: "열기",
+      onSubmit: async function (v) {
+        let h = "";
+        try { h = await hashPw(v.a); } catch (e) { return NO_CRYPTO; }
+        if (h !== lsGet(KEY.hash)) return "비밀번호가 맞지 않아요.";
+        srOpen();
+        return null;
+      }
+    });
+  }
+  function startChange() {
+    openModal({
+      title: "비밀번호 바꾸기",
+      desc: "새로 쓸 비밀번호를 정해 주세요. 4자리 이상이면 돼요.",
+      fields: [{ key: "a", label: "새 비밀번호", ph: "4자리 이상" }, { key: "b", label: "한 번 더 입력" }],
+      submit: "바꾸기",
+      onSubmit: async function (v) {
+        if (String(v.a).length < 4) return "4자리 이상으로 정해 주세요.";
+        if (v.a !== v.b) return "두 번 입력한 비밀번호가 달라요.";
+        let h = "";
+        try { h = await hashPw(v.a); } catch (e) { return NO_CRYPTO; }
+        lsSet(KEY.hash, h);
+        say("비밀번호를 바꿨어요");
+        return null;
+      }
+    });
+  }
+
+  /* ── 방 화면 ── */
+  function buildRoom() {
+    room = document.createElement("div");
+    room.className = "sr-room";
+    room.id = "srRoom";
+    room.setAttribute("role", "dialog");
+    room.setAttribute("aria-modal", "true");
+    room.setAttribute("aria-label", "비밀의 방");
+    room.setAttribute("aria-hidden", "true");
+    room.innerHTML = [
+      '<div class="sr-inner">',
+      '  <div class="sr-head">',
+      '    <div class="sr-title">🤫 비밀의 방</div>',
+      '    <div class="sr-headbtns">',
+      '      <button class="sr-hbtn" type="button" data-sr="pw">🔑 비밀번호 바꾸기</button>',
+      '      <button class="sr-hbtn sr-hbtn-lock" type="button" data-sr="lock">🔒 잠그기</button>',
+      '    </div>',
+      '  </div>',
+      '  <div class="sr-banner">🔒 이 방의 기록과 비밀번호는 오직 지금 쓰는 기기에만 저장돼요. 다른 사람 화면이나 서버엔 절대 올라가지 않아요.</div>',
+      '  <section class="sr-card">',
+      '    <h3>🩸 컨디션 &amp; 생리 주기</h3>',
+      '    <div class="sr-dday" id="srDday"></div>',
+      '    <div class="sr-quick">',
+      '      <button class="sr-btn" type="button" data-sr="startToday">오늘 시작일로 기록</button>',
+      '      <button class="sr-btn ghost" type="button" data-sr="endToday">오늘 종료일로 기록</button>',
+      '    </div>',
+      '    <div class="sr-lab">날짜 직접 추가</div>',
+      '    <div class="sr-line">',
+      '      <select class="sr-sel" id="srKind"><option value="start">시작일</option><option value="end">종료일</option></select>',
+      '      <input class="sr-in" type="date" id="srDate">',
+      '      <button class="sr-mini" type="button" data-sr="addDate">추가</button>',
+      '    </div>',
+      '    <ul class="sr-list" id="srCycleList"></ul>',
+      '    <div class="sr-lab">오늘의 컨디션</div>',
+      '    <div class="sr-tags" id="srTags"></div>',
+      '    <textarea class="sr-ta" id="srCondNote" rows="2" placeholder="한 줄 메모 (선택)"></textarea>',
+      '    <button class="sr-btn" type="button" data-sr="saveCond">오늘 컨디션 저장</button>',
+      '    <ul class="sr-list" id="srCondList"></ul>',
+      '  </section>',
+      '  <section class="sr-card">',
+      '    <h3>📝 비밀 메모장</h3>',
+      '    <div class="sr-moods" id="srMoods"></div>',
+      '    <textarea class="sr-ta" id="srMemoText" rows="4" placeholder="지금 마음에 있는 걸 편하게 적어 두세요. 여기서만 보여요."></textarea>',
+      '    <button class="sr-btn" type="button" data-sr="saveMemo">메모 저장</button>',
+      '    <ul class="sr-list" id="srMemoList"></ul>',
+      '  </section>',
+      '  <div class="sr-foot">',
+      '    <label class="sr-toggle"><input type="checkbox" id="srAuto"><span>화면을 벗어나면 자동으로 잠그기</span></label>',
+      '    <p class="sr-tiny">비밀번호와 기록은 이 기기의 브라우저 저장소에만 있어요. 다른 기기나 서버로 보내지 않아요.</p>',
+      '  </div>',
+      '</div>'
+    ].join("\n");
+    document.body.appendChild(room);
+
+    room.addEventListener("click", function (e) {
+      const btn = e.target && e.target.closest ? e.target.closest("[data-sr]") : null;
+      if (!btn) return;
+      const act = btn.getAttribute("data-sr");
+      const id = btn.getAttribute("data-id");
+      if (act === "lock") { srLock(); return; }
+      if (act === "pw") { startChange(); return; }
+      if (act === "startToday") { addStart(dstr()); return; }
+      if (act === "endToday") { endToday(); return; }
+      if (act === "addDate") { addDatePick(); return; }
+      if (act === "tag") {
+        const t = btn.getAttribute("data-tag");
+        const at = condTags.indexOf(t);
+        if (at >= 0) condTags.splice(at, 1); else condTags.push(t);
+        renderTags();
+        return;
+      }
+      if (act === "saveCond") { saveCond(); return; }
+      if (act === "mood") { moodPick = btn.getAttribute("data-mood") || "😊"; renderSecretMemos(); return; }
+      if (act === "saveMemo") { saveMemo(); return; }
+      if (act === "editMemo") { editMemo = id; renderSecretMemos(); return; }
+      if (act === "cancelEdit") { editMemo = null; renderSecretMemos(); return; }
+      if (act === "saveEdit") { saveEdit(id); return; }
+      if (act === "delMemo") {
+        if (!window.confirm("이 메모를 지울까요?")) return;
+        lsSave(KEY.memo, memoList().filter(function (m) { return m.id !== id; }));
+        editMemo = null;
+        renderSecretMemos();
+        say("메모를 지웠어요");
+        return;
+      }
+      if (act === "delCycle") {
+        if (!window.confirm("이 기록을 지울까요?")) return;
+        lsSave(KEY.cycle, cycleList().filter(function (r) { return r.id !== id; }));
+        renderCycle();
+        say("기록을 지웠어요");
+        return;
+      }
+      if (act === "delCond") {
+        if (!window.confirm("이 날의 컨디션 기록을 지울까요?")) return;
+        const map = condMap();
+        delete map[id];
+        lsSave(KEY.cond, map);
+        renderCond();
+        say("기록을 지웠어요");
+        return;
+      }
+    });
+
+    const auto = room.querySelector("#srAuto");
+    if (auto) {
+      auto.checked = autoLock;
+      auto.addEventListener("change", function () {
+        autoLock = !!auto.checked;
+        lsSet(KEY.auto, autoLock ? "on" : "off");
+      });
+    }
+  }
+
+  function srOpen() {
+    if (!room) buildRoom();
+    renderCycle();
+    renderCond();
+    renderSecretMemos();
+    room.classList.add("open");
+    room.setAttribute("aria-hidden", "false");
+    document.body.classList.add("sr-locked");
+    opened = true;
+    const d = room.querySelector("#srDate");
+    if (d) d.value = dstr();
+    const auto = room.querySelector("#srAuto");
+    if (auto) auto.checked = autoLock;
+    room.scrollTop = 0;
+  }
+
+  function srLock() {
+    closeModal();
+    if (!room || !opened) return;
+    room.classList.remove("open");
+    room.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("sr-locked");
+    opened = false;
+    editMemo = null;
+    condTags = [];
+    /* 방을 닫을 때 화면에 남은 기록도 지워 둬요 (저장된 값은 localStorage에만) */
+    ["#srCycleList", "#srCondList", "#srMemoList", "#srDday"].forEach(function (sel) {
+      const n = room.querySelector(sel);
+      if (n) n.innerHTML = "";
+    });
+    ["#srCondNote", "#srMemoText"].forEach(function (sel) {
+      const n = room.querySelector(sel);
+      if (n) n.value = "";
+    });
+  }
+
+  /* ── 생리 주기 ── */
+  function cycleList() {
+    const v = lsJson(KEY.cycle, []);
+    return Array.isArray(v) ? v.filter(function (r) { return r && r.id && validDate(r.start); }) : [];
+  }
+  function cycleStats() {
+    const recs = cycleList().slice().sort(function (a, b) { return a.start < b.start ? -1 : 1; });
+    const gaps = [];
+    for (let i = recs.length - 1; i > 0 && gaps.length < 6; i--) {
+      const g = ddiff(recs[i].start, recs[i - 1].start);
+      if (g >= 15 && g <= 60) gaps.push(g);
+    }
+    let sum = 0;
+    gaps.forEach(function (g) { sum += g; });
+    return { recs: recs, avg: gaps.length ? Math.round(sum / gaps.length) : 28, basis: gaps.length, last: recs.length ? recs[recs.length - 1] : null };
+  }
+  function renderCycle() {
+    if (!room) return;
+    const box = room.querySelector("#srDday");
+    const ul = room.querySelector("#srCycleList");
+    const st = cycleStats();
+    const today = dstr();
+    if (box) {
+      box.innerHTML = "";
+      if (!st.last) {
+        box.appendChild(el("div", "sr-big", "기록 없음"));
+        box.appendChild(el("div", "sr-small", "아래 버튼으로 오늘 시작일을 남기면 다음 예정일을 계산해 드려요."));
+      } else {
+        const pred = dadd(st.last.start, st.avg);
+        const d = ddiff(pred, today);
+        const label = d > 0 ? "D-" + d : (d === 0 ? "오늘" : "D+" + (-d));
+        box.appendChild(el("div", "sr-big", "다음 예정 " + label));
+        box.appendChild(el("div", "sr-small", dfmt(pred) + " 예상"));
+        box.appendChild(el("div", "sr-small", "평균 주기 " + st.avg + "일" + (st.basis ? " · 최근 " + st.basis + "번 기록 기준" : " · 기본값(기록이 쌓이면 자동 계산)")));
+        const ongoing = !st.last.end || ddiff(st.last.end, today) >= 0;
+        if (ongoing && ddiff(today, st.last.start) >= 0) {
+          box.appendChild(el("div", "sr-small sr-on", "진행 중 · " + (ddiff(today, st.last.start) + 1) + "일째"));
+        }
+      }
+    }
+    if (!ul) return;
+    ul.innerHTML = "";
+    if (!st.recs.length) {
+      ul.appendChild(el("li", "sr-empty", "시작일·종료일 기록이 여기에 쌓여요."));
+      return;
+    }
+    st.recs.slice().reverse().forEach(function (r) {
+      const li = el("li", "sr-item");
+      const main = el("div", "sr-item-main");
+      main.appendChild(el("div", "sr-item-t", dfmt(r.start) + " 시작"));
+      if (validDate(r.end)) main.appendChild(el("div", "sr-item-s", dfmt(r.end) + " 종료 · " + (ddiff(r.end, r.start) + 1) + "일"));
+      else main.appendChild(el("div", "sr-item-s", "종료일 아직 없음"));
+      li.appendChild(main);
+      const del = el("button", "sr-x", "✕");
+      del.type = "button";
+      del.setAttribute("data-sr", "delCycle");
+      del.setAttribute("data-id", r.id);
+      del.setAttribute("aria-label", dfmt(r.start) + " 기록 삭제");
+      li.appendChild(del);
+      ul.appendChild(li);
+    });
+  }
+  function addStart(day) {
+    if (!validDate(day)) { say("날짜를 확인해 주세요"); return; }
+    const arr = cycleList();
+    if (arr.some(function (r) { return r.start === day; })) { say("이미 시작일로 기록돼 있어요"); return; }
+    arr.push({ id: newId(), start: day, end: null });
+    lsSave(KEY.cycle, arr);
+    renderCycle();
+    say(dfmt(day) + " 시작으로 기록했어요");
+  }
+  function endToday() {
+    const arr = cycleList().sort(function (a, b) { return a.start < b.start ? -1 : 1; });
+    if (!arr.length) { say("먼저 시작일을 기록해 주세요"); return; }
+    const last = arr[arr.length - 1];
+    if (validDate(last.end)) { say("마지막 기록은 이미 종료됐어요. 새 시작일을 남겨 주세요"); return; }
+    const today = dstr();
+    if (ddiff(today, last.start) < 0) { say("시작일보다 앞선 날짜예요"); return; }
+    last.end = today;
+    lsSave(KEY.cycle, arr);
+    renderCycle();
+    say("오늘 종료로 기록했어요");
+  }
+  function addDatePick() {
+    const kindEl = room.querySelector("#srKind");
+    const dayEl = room.querySelector("#srDate");
+    const kind = kindEl ? kindEl.value : "start";
+    const day = dayEl ? dayEl.value : "";
+    if (!validDate(day)) { say("날짜를 선택해 주세요"); return; }
+    if (kind === "start") { addStart(day); return; }
+    const arr = cycleList().sort(function (a, b) { return a.start < b.start ? -1 : 1; });
+    let target = null;
+    for (let i = arr.length - 1; i >= 0; i--) { if (arr[i].start <= day) { target = arr[i]; break; } }
+    if (!target) { say("그 날짜보다 앞선 시작일이 없어요"); return; }
+    if (ddiff(day, target.start) < 0) { say("시작일보다 앞선 날짜예요"); return; }
+    target.end = day;
+    lsSave(KEY.cycle, arr);
+    renderCycle();
+    say(dfmt(day) + " 종료로 기록했어요");
+  }
+
+  /* ── 컨디션 ── */
+  function condMap() {
+    const v = lsJson(KEY.cond, {});
+    return (v && typeof v === "object" && !Array.isArray(v)) ? v : {};
+  }
+  function renderTags() {
+    if (!room) return;
+    const box = room.querySelector("#srTags");
+    if (!box) return;
+    box.innerHTML = "";
+    TAGS.forEach(function (t) {
+      const on = condTags.indexOf(t) >= 0;
+      const b = el("button", "sr-tag" + (on ? " on" : ""), t);
+      b.type = "button";
+      b.setAttribute("data-sr", "tag");
+      b.setAttribute("data-tag", t);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      box.appendChild(b);
+    });
+  }
+  function renderCond() {
+    if (!room) return;
+    const map = condMap();
+    const today = dstr();
+    const cur = map[today] || {};
+    condTags = Array.isArray(cur.tags) ? cur.tags.slice() : [];
+    renderTags();
+    const note = room.querySelector("#srCondNote");
+    if (note) note.value = cur.note || "";
+    const ul = room.querySelector("#srCondList");
+    if (!ul) return;
+    ul.innerHTML = "";
+    const keys = Object.keys(map).filter(function (k) { return validDate(k); }).sort().reverse();
+    if (!keys.length) { ul.appendChild(el("li", "sr-empty", "아직 컨디션 기록이 없어요.")); return; }
+    keys.forEach(function (k) {
+      const it = map[k] || {};
+      const li = el("li", "sr-item");
+      const main = el("div", "sr-item-main");
+      main.appendChild(el("div", "sr-item-t", dfmt(k) + (k === today ? " · 오늘" : "")));
+      const tags = Array.isArray(it.tags) ? it.tags : [];
+      if (tags.length) main.appendChild(el("div", "sr-item-s", tags.join(" · ")));
+      else if (!it.note) main.appendChild(el("div", "sr-item-s", "태그 없음"));
+      if (it.note) main.appendChild(el("div", "sr-item-n", it.note));
+      li.appendChild(main);
+      const del = el("button", "sr-x", "✕");
+      del.type = "button";
+      del.setAttribute("data-sr", "delCond");
+      del.setAttribute("data-id", k);
+      del.setAttribute("aria-label", dfmt(k) + " 컨디션 기록 삭제");
+      li.appendChild(del);
+      ul.appendChild(li);
+    });
+  }
+  function saveCond() {
+    if (!room) return;
+    const map = condMap();
+    const today = dstr();
+    const noteEl = room.querySelector("#srCondNote");
+    const note = noteEl ? String(noteEl.value || "").trim() : "";
+    if (!condTags.length && !note) { say("태그를 고르거나 메모를 적어 주세요"); return; }
+    map[today] = { tags: condTags.slice(), note: note.slice(0, 300), at: Date.now() };
+    lsSave(KEY.cond, map);
+    renderCond();
+    say("오늘 컨디션을 기록했어요");
+  }
+
+  /* ── 비밀 메모장 ── */
+  function memoList() {
+    const v = lsJson(KEY.memo, []);
+    return Array.isArray(v) ? v.filter(function (m) { return m && m.id; }) : [];
+  }
+  function renderSecretMemos() {
+    if (!room) return;
+    const moodBox = room.querySelector("#srMoods");
+    if (moodBox) {
+      moodBox.innerHTML = "";
+      MOODS.forEach(function (m) {
+        const on = m === moodPick;
+        const b = el("button", "sr-mood" + (on ? " on" : ""), m);
+        b.type = "button";
+        b.setAttribute("data-sr", "mood");
+        b.setAttribute("data-mood", m);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+        b.setAttribute("aria-label", "기분 " + m);
+        moodBox.appendChild(b);
+      });
+    }
+    const ul = room.querySelector("#srMemoList");
+    if (!ul) return;
+    ul.innerHTML = "";
+    const list = memoList().slice().sort(function (a, b) { return (Number(b.at) || 0) - (Number(a.at) || 0); });
+    if (!list.length) { ul.appendChild(el("li", "sr-empty", "아직 적어 둔 메모가 없어요. 오늘 마음부터 남겨 보세요.")); return; }
+    list.forEach(function (m) {
+      const li = el("li", "sr-item sr-memo");
+      const main = el("div", "sr-item-main");
+      const top = el("div", "sr-memo-top");
+      top.appendChild(el("span", "sr-memo-mood", m.mood || "📝"));
+      top.appendChild(el("span", "sr-memo-at", dtfmt(m.at)));
+      main.appendChild(top);
+      if (editMemo === m.id) {
+        const ta = document.createElement("textarea");
+        ta.className = "sr-ta";
+        ta.rows = 3;
+        ta.value = m.text || "";
+        main.appendChild(ta);
+        const row = el("div", "sr-mrow2");
+        const sv = el("button", "sr-mini", "저장");
+        sv.type = "button";
+        sv.setAttribute("data-sr", "saveEdit");
+        sv.setAttribute("data-id", m.id);
+        const cc = el("button", "sr-mini ghost", "취소");
+        cc.type = "button";
+        cc.setAttribute("data-sr", "cancelEdit");
+        row.appendChild(sv);
+        row.appendChild(cc);
+        main.appendChild(row);
+      } else {
+        main.appendChild(el("div", "sr-memo-tx", m.text || ""));
+      }
+      li.appendChild(main);
+      if (editMemo !== m.id) {
+        const ed = el("button", "sr-x", "✏️");
+        ed.type = "button";
+        ed.setAttribute("data-sr", "editMemo");
+        ed.setAttribute("data-id", m.id);
+        ed.setAttribute("aria-label", "메모 수정");
+        li.appendChild(ed);
+        const del = el("button", "sr-x", "✕");
+        del.type = "button";
+        del.setAttribute("data-sr", "delMemo");
+        del.setAttribute("data-id", m.id);
+        del.setAttribute("aria-label", "메모 삭제");
+        li.appendChild(del);
+      }
+      ul.appendChild(li);
+    });
+  }
+  function saveMemo() {
+    if (!room) return;
+    const ta = room.querySelector("#srMemoText");
+    const text = ta ? String(ta.value || "").trim() : "";
+    if (!text) { say("메모 내용을 적어 주세요"); if (ta) ta.focus(); return; }
+    const arr = memoList();
+    arr.push({ id: newId(), at: Date.now(), mood: moodPick, text: text.slice(0, 2000) });
+    lsSave(KEY.memo, arr);
+    if (ta) ta.value = "";
+    editMemo = null;
+    renderSecretMemos();
+    say("메모를 저장했어요");
+  }
+  function saveEdit(id) {
+    if (!room) return;
+    const ta = room.querySelector(".sr-memo .sr-ta");
+    const text = ta ? String(ta.value || "").trim() : "";
+    if (!text) { say("내용을 적어 주세요"); return; }
+    const arr = memoList().map(function (m) {
+      return m.id === id ? Object.assign({}, m, { text: text.slice(0, 2000) }) : m;
+    });
+    lsSave(KEY.memo, arr);
+    editMemo = null;
+    renderSecretMemos();
+    say("메모를 고쳤어요");
+  }
+
+  /* ── 숨은 진입: 제목(로고+텍스트) 3번 두드리기 ── */
+  let taps = [];
+  function onTap(e) {
+    if (opened) return;
+    if (gate && gate.classList.contains("show")) return;
+    const now = Date.now();
+    taps = taps.filter(function (t) { return now - t < TAP_MS; });
+    taps.push(now);
+    if (taps.length >= 3) {
+      taps = [];
+      if (e && e.cancelable) { try { e.preventDefault(); } catch (x) {} }
+      enter();
+    }
+  }
+  const tapZone = document.getElementById("brandTap");
+  if (tapZone) {
+    if (window.PointerEvent) tapZone.addEventListener("pointerup", onTap);
+    else tapZone.addEventListener("click", onTap);
+  }
+
+  /* ── 잠금 유지 장치 ── */
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden" && opened && autoLock) srLock();
+  });
+  window.addEventListener("pagehide", function () { if (opened && autoLock) srLock(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (modalEl) { closeModal(); return; }
+    if (opened) srLock();
+  });
+  if (gate && window.MutationObserver) {
+    new MutationObserver(function () {
+      if (gate.classList.contains("show") && opened) srLock();
+    }).observe(gate, { attributes: true, attributeFilter: ["class"] });
+  }
+})();
 
 /* ───────── 로그인 상태에 따라 ───────── */
 onAuthStateChanged(auth, async (user) => {
