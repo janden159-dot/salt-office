@@ -365,6 +365,136 @@
   .gate-card .btn-add{width:100%}
   .gate-out,.linkbtn{background:none;border:0;padding:0;color:var(--brown-d);font:inherit;font-size:inherit;text-decoration:underline;cursor:pointer}
   .gate-out{margin-top:4px;font-size:13px}
+
+  /* ── 새 방: 음식 · 웹툰 · 놀거리 ── */
+  .room-hero{
+    position:relative;overflow:hidden;border-radius:24px;padding:17px 17px 16px;margin-bottom:12px;
+    border:1px solid #f0e1cb;box-shadow:var(--sh);
+    background:radial-gradient(90% 120% at 100% 0%,#fdf0dc 0%,rgba(253,240,220,0) 55%),linear-gradient(170deg,#fffaf2,#fdf3e6);
+  }
+  .room-hero .rh-badge{
+    display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--brown-d);
+    background:#fff6e8;border:1px solid #f0dfc7;border-radius:999px;padding:5px 10px;margin-bottom:8px;
+  }
+  .room-hero h2{margin:0 0 5px;font-size:19px;line-height:1.34;letter-spacing:-.5px;font-weight:800}
+  .room-hero p{margin:0;font-size:12.5px;color:var(--ink2);line-height:1.55}
+  .room-hero .rh-emo{position:absolute;right:-8px;bottom:-12px;font-size:78px;opacity:.13;line-height:1;pointer-events:none}
+
+  .quick{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:12px 0 4px}
+  .quick button{
+    font:inherit;cursor:pointer;border-radius:18px;padding:12px 8px 11px;text-align:center;
+    border:1px solid #f0e0ca;background:linear-gradient(165deg,#fffaf2,#fdf1e1);box-shadow:var(--sh-s);
+    transition:transform .15s ease,background .2s;
+  }
+  .quick button:active{transform:scale(.96)}
+  .quick .q-emo{display:block;font-size:22px;line-height:1;margin-bottom:4px}
+  .quick .q-tx{font-size:11.5px;font-weight:800;color:#6b5038;letter-spacing:-.2px}
+
+  .seg{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 10px;margin:0 -2px 2px}
+  .seg::-webkit-scrollbar{display:none}
+  .segbtn{
+    flex:0 0 auto;font:inherit;font-size:12px;font-weight:800;color:var(--ink2);
+    background:#fffaf3;border:1.5px solid #eddfca;border-radius:999px;padding:8px 12px;cursor:pointer;
+    white-space:nowrap;transition:transform .15s ease,background .2s,color .2s,border-color .2s;
+  }
+  .segbtn:active{transform:scale(.96)}
+  .segbtn.on{color:#fff;border-color:transparent;background:linear-gradient(160deg,#bd8d61,#9d6c45);box-shadow:0 6px 14px rgba(150,105,63,.24)}
+
+  .pick{
+    padding:17px 16px 16px;border-radius:24px;text-align:center;margin-bottom:11px;
+    border:1px solid #f0dcc2;box-shadow:var(--sh);
+    background:radial-gradient(120% 90% at 50% 0%,#fff8ec 0%,rgba(255,248,236,0) 60%),linear-gradient(170deg,#fdf1de,#f8e6cd);
+  }
+  .pick .pk-emo{font-size:48px;line-height:1;display:block;margin:2px 0 6px}
+  .pick .pk-name{font-size:22px;font-weight:900;letter-spacing:-.7px;line-height:1.28;word-break:keep-all}
+  .pick .pk-desc{font-size:12.5px;color:var(--ink2);margin-top:5px;line-height:1.5;word-break:keep-all}
+  .pick .pk-tip{margin-top:10px;font-size:12px;color:#8a6242;background:#fff8ee;border:1px dashed #eddbc2;border-radius:14px;padding:9px 11px;line-height:1.55;text-align:left}
+  .pick .pk-tag{display:inline-block;font-size:10.5px;font-weight:800;color:#a1712c;background:#fff3df;border:1px solid #f0dfc2;border-radius:999px;padding:3px 9px;margin-bottom:3px}
+  .pick.rolling .pk-emo{animation:wiggle .22s linear infinite}
+  .pick.done .pk-emo{animation:pop .45s cubic-bezier(.2,1.6,.4,1) both}
+  @keyframes wiggle{0%{transform:rotate(-9deg) scale(1)}50%{transform:rotate(9deg) scale(1.1)}100%{transform:rotate(-9deg) scale(1)}}
+  @keyframes pop{0%{transform:scale(.4);opacity:.2}100%{transform:scale(1);opacity:1}}
+
+  .btn-row{display:flex;gap:8px;margin:0;padding:0}
+  .btn-row .btn-add{flex:1;padding:12px 10px;font-size:13.5px;letter-spacing:-.2px}
+  .btn-add.ghost{background:#fffaf3;color:#8a5f3c;border:1.5px solid #e7d3b7;box-shadow:none}
+
+  .sec-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:17px 2px 8px;font-size:13px;font-weight:800;letter-spacing:-.2px}
+  .sec-h .cnt{font-size:11px;font-weight:700;color:var(--ink3)}
+  .sec-h.tap{cursor:pointer}
+
+  .tile-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:10px}
+  .tile{
+    text-align:left;font:inherit;background:#fffdf8;border:1px solid #f1e5d4;border-radius:18px;
+    padding:13px 12px;cursor:pointer;display:flex;flex-direction:column;gap:4px;
+    box-shadow:0 4px 12px rgba(138,100,64,.06);transition:transform .15s ease,box-shadow .2s,border-color .2s;
+  }
+  .tile:active{transform:scale(.975)}
+  .tile .t-emo{font-size:26px;line-height:1}
+  .tile .t-name{font-size:13.2px;font-weight:800;letter-spacing:-.3px;line-height:1.35;color:var(--ink);word-break:keep-all}
+  .tile .t-sub{font-size:11.2px;color:var(--ink2);line-height:1.4}
+  .tile .t-meta{font-size:10.5px;color:var(--ink3);font-weight:700;margin-top:1px}
+
+  .rowlist{margin-bottom:6px}
+  .frow{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:15px;background:#fffdf8;border:1px solid #f1e5d4;margin-bottom:8px}
+  .frow .f-emo{font-size:18px;line-height:1.35;flex:0 0 auto}
+  .frow .f-main{flex:1;min-width:0}
+  .frow .f-name{font-size:13px;font-weight:800;letter-spacing:-.2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;line-height:1.35}
+  .frow .f-sub{font-size:11.5px;color:var(--ink2);margin-top:2px;line-height:1.45;word-break:break-word}
+  .frow.off{opacity:.52}
+  .tsw{flex:0 0 auto;width:44px;height:26px;border-radius:999px;border:1.5px solid #e2d2bc;background:#f2e9dc;position:relative;cursor:pointer;padding:0;font:inherit;transition:background .2s,border-color .2s}
+  .tsw::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.18);transition:transform .2s}
+  .tsw.on{background:#7fc08d;border-color:#6fb37e}
+  .tsw.on::after{transform:translateX(18px)}
+  .fdel{flex:0 0 auto;width:28px;height:28px;border-radius:50%;border:1px solid #eedfcc;background:#fdf6ea;color:#b08a6c;font-size:13px;line-height:1;cursor:pointer;font-family:inherit;display:grid;place-items:center}
+  .fdel:active{transform:scale(.92)}
+
+  .stars{display:flex;gap:1px;margin:3px 0 1px}
+  .star{font-size:17px;line-height:1;background:none;border:0;padding:2px 3px;cursor:pointer;color:#e2d2bc;font-family:inherit}
+  .star.on{color:#e8a33c}
+
+  .mini-edit{display:flex;gap:6px;margin-top:6px}
+  .mini-edit[hidden]{display:none}
+  .mini-edit input{flex:1;min-width:0;font:inherit;font-size:12px;color:var(--ink);background:#fffaf3;border:1.5px solid #eddfca;border-radius:11px;padding:7px 9px;outline:none}
+  .mini-save{flex:0 0 auto;font:inherit;font-size:12px;font-weight:800;color:#8a5f3c;background:#fdf1df;border:1px solid #eddbc0;border-radius:11px;padding:7px 11px;cursor:pointer}
+
+  .addbox{display:flex;flex-direction:column;gap:7px;margin:0 0 10px}
+  .addbox input,.addbox select{font:inherit;font-size:13px;color:var(--ink);background:#fffdf8;border:1.5px solid #eddfca;border-radius:14px;padding:11px 12px;outline:none;min-width:0;width:100%}
+  .addbox input::placeholder{color:#c0ac98}
+  .addbox input:focus,.addbox select:focus{border-color:#d9b98f;box-shadow:0 0 0 3px rgba(217,185,143,.18)}
+  .addbox .ab-bot{display:flex;gap:7px}
+  .addbox .ab-bot select,.addbox .ab-bot input{flex:1;width:auto}
+  .addbox .ab-add{flex:0 0 auto;font:inherit;font-size:13px;font-weight:800;color:#fff;border:none;border-radius:14px;padding:11px 17px;background:linear-gradient(160deg,#bd8d61,#9d6c45);box-shadow:0 6px 16px rgba(150,105,63,.24);cursor:pointer}
+  .addbox .ab-add:active{transform:scale(.97)}
+
+  .note-card{border-radius:20px;padding:15px 15px 13px;background:linear-gradient(160deg,#fff8ee,#fdf1e0);border:1px solid #f0dfc7;box-shadow:var(--sh-s);margin-bottom:10px}
+  .note-card .nc-t{font-size:13px;font-weight:800;letter-spacing:-.2px;margin-bottom:8px}
+  .note-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .note-list li{font-size:12.3px;color:#6b5038;line-height:1.5;display:flex;gap:7px;align-items:flex-start;word-break:keep-all}
+  .note-list li span:first-child{flex:0 0 auto}
+  .note-card textarea{
+    font:inherit;font-size:12.5px;color:var(--ink);width:100%;min-height:46px;resize:vertical;margin-top:11px;
+    padding:10px 12px;border-radius:13px;border:1.5px dashed #e6d3b8;background:#fffdf8;outline:none;line-height:1.5;
+  }
+  .note-card textarea:focus{border-style:solid;border-color:#d9b98f}
+  .note-card textarea::placeholder{color:#c0ac98}
+
+  .d-hero{display:flex;align-items:center;gap:12px;margin-bottom:11px}
+  .d-hero .d-emo{font-size:38px;line-height:1}
+  .d-hero .d-tt{font-size:17px;font-weight:900;letter-spacing:-.4px;line-height:1.3}
+  .d-hero .d-st{font-size:11.5px;color:var(--ink2);margin-top:2px}
+  .d-p{font-size:13px;line-height:1.65;color:var(--ink);margin:0 0 10px;word-break:keep-all}
+  .d-box{background:#fffaf3;border:1px dashed #ecdcc4;border-radius:14px;padding:11px 12px;font-size:12.3px;line-height:1.6;color:#6b5038;margin-bottom:11px;word-break:keep-all}
+  .d-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:9px}
+
+  .toast{
+    position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));transform:translate(-50%,16px);opacity:0;z-index:70;
+    background:rgba(75,54,39,.95);color:#fff7ea;font-size:12.5px;font-weight:700;padding:10px 15px;border-radius:999px;
+    box-shadow:0 8px 22px rgba(60,40,24,.3);transition:opacity .22s ease,transform .22s ease;pointer-events:none;max-width:86%;text-align:center;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  body.theme-basic .room-hero,body.theme-basic .pick,body.theme-basic .note-card{background:#fff;border-color:#e7e7e3}
+  body.theme-basic .pick .pk-tip,body.theme-basic .d-box{background:#fafafa}
 </style>
 </head>
 <body>
@@ -395,6 +525,9 @@
     <button class="tab" role="tab" aria-selected="false" data-screen="screen-schedule">📅 일정</button>
     <button class="tab" role="tab" aria-selected="false" data-screen="screen-routines">⚙️ 루틴</button>
     <button class="tab" role="tab" aria-selected="false" data-screen="screen-memo">📝 메모</button>
+    <button class="tab" role="tab" aria-selected="false" data-screen="screen-food">🍽️ 음식</button>
+    <button class="tab" role="tab" aria-selected="false" data-screen="screen-webtoon">📚 웹툰</button>
+    <button class="tab" role="tab" aria-selected="false" data-screen="screen-date">🎡 놀거리</button>
   </nav>
   </div>
 
@@ -434,6 +567,13 @@
         </button>
       </div>
       <div class="map-note">👆 방을 눌러 들어가면 소금이의 기록을 볼 수 있어요</div>
+
+      <div class="sec-h"><span>🆕 새로 생긴 방</span><span class="cnt">눌러서 바로 들어가기</span></div>
+      <div class="quick" id="quickRooms">
+        <button type="button" data-screen="screen-food"><span class="q-emo">🍽️</span><span class="q-tx">음식 방<br>메뉴 추첨</span></button>
+        <button type="button" data-screen="screen-webtoon"><span class="q-emo">📚</span><span class="q-tx">웹툰 방<br>취향 추천</span></button>
+        <button type="button" data-screen="screen-date"><span class="q-emo">🎡</span><span class="q-tx">놀거리 방<br>데이트 뽑기</span></button>
+      </div>
     </section>
 
     <!-- ═══ 다가오는 일정 ═══ -->
@@ -476,6 +616,132 @@
       <div id="memoList"></div>
     </section>
 
+    <!-- ═══ 음식 방 ═══ -->
+    <section class="screen" id="screen-food" role="tabpanel" aria-label="음식 방">
+      <div class="room-hero">
+        <span class="rh-badge">🧂 소금이의 음식 방</span>
+        <h2>오늘 뭐 먹지?</h2>
+        <p>메뉴가 안 떠오를 때 한 번 눌러 보세요. 회랑 떡 들어간 메뉴는 후보에서 아예 빼 두었어요.</p>
+        <span class="rh-emo" aria-hidden="true">🍲</span>
+      </div>
+
+      <div class="seg" id="foodCats" role="group" aria-label="음식 카테고리"></div>
+
+      <div class="pick" id="foodPick">
+        <span class="pk-emo">🍽️</span>
+        <div class="pk-name">아직 안 골랐어요</div>
+        <div class="pk-desc">아래 버튼을 누르면 오늘 먹을 메뉴를 골라 드려요</div>
+      </div>
+      <div class="btn-row"><button class="btn-add" type="button" id="foodDraw">🍜 메뉴 뽑기</button></div>
+
+      <div class="sec-h"><span>🍲 자주 먹는 최애 메뉴</span><span class="cnt">눌러서 보기</span></div>
+      <div class="tile-grid" id="foodFavs"></div>
+
+      <div class="note-card">
+        <div class="nc-t">🍽️ 내 입맛 메모</div>
+        <ul class="note-list">
+          <li><span>🚫</span><span>회·날것은 안 먹어요</span></li>
+          <li><span>🚫</span><span>떡 들어간 메뉴는 싫어요</span></li>
+          <li><span>🍢</span><span>단, 엽떡은 '오뎅파' — 떡 빼고 오뎅으로!</span></li>
+          <li><span>🌶️</span><span>매콤한 건 언제나 좋아요</span></li>
+        </ul>
+        <textarea id="foodMemo" maxlength="120" placeholder="입맛 메모를 적어 두면 이 기기에 저장돼요"></textarea>
+      </div>
+
+      <div class="sec-h tap" id="foodCandToggle" role="button" tabindex="0" aria-expanded="false">
+        <span>🎯 추첨 후보</span><span class="cnt" id="foodCandCnt">펼치기 ▾</span>
+      </div>
+      <div class="rowlist" id="foodList" hidden></div>
+
+      <div class="sec-h"><span>➕ 내 메뉴 추가</span><span class="cnt">여기서 넣은 메뉴도 뽑혀요</span></div>
+      <form class="addbox" id="foodAddForm" autocomplete="off">
+        <input id="foodAddName" maxlength="20" placeholder="예: 김치찌개" aria-label="추가할 메뉴 이름">
+        <div class="ab-bot">
+          <select id="foodAddCat" aria-label="메뉴 카테고리"></select>
+          <button class="ab-add" type="submit">추가</button>
+        </div>
+      </form>
+      <p class="foot-note">바꿔 둔 목록과 메모는 이 기기에만 저장돼요. 다른 기기에서는 처음 목록으로 보여요.</p>
+    </section>
+
+    <!-- ═══ 웹툰 방 ═══ -->
+    <section class="screen" id="screen-webtoon" role="tabpanel" aria-label="웹툰 방">
+      <div class="room-hero">
+        <span class="rh-badge">🧂 소금이의 웹툰 방</span>
+        <h2>볼 게 없을 때</h2>
+        <p>유쾌하고 케미 살아 있는 작품, 로판, 회차 넉넉한 완결작 위주로 모았어요.</p>
+        <span class="rh-emo" aria-hidden="true">📚</span>
+      </div>
+
+      <div class="note-card">
+        <div class="nc-t">📚 내 웹툰 취향</div>
+        <ul class="note-list">
+          <li><span>✨</span><span>유쾌하고 케미 살아 있는 작품 + 로판(로맨스 판타지) 선호</span></li>
+          <li><span>📚</span><span>신작(회차 적은 것)보다 회차가 넉넉한 장기작·완결작 위주!</span></li>
+          <li><span>🙅</span><span>너무 무겁고 잔잔한 결보다는 몰입·케미 쪽이 잘 맞아요</span></li>
+        </ul>
+      </div>
+
+      <div class="seg" id="toonGenres" role="group" aria-label="웹툰 장르"></div>
+
+      <div class="pick" id="toonPick">
+        <span class="pk-emo">📚</span>
+        <div class="pk-name">아직 안 골랐어요</div>
+        <div class="pk-desc">아래 버튼을 누르면 오늘 볼 웹툰을 골라 드려요</div>
+      </div>
+      <div class="btn-row"><button class="btn-add" type="button" id="toonDraw">🎲 웹툰 뽑기</button></div>
+
+      <div class="sec-h"><span>🎁 취향 맞춤 추천</span><span class="cnt" id="toonCnt"></span></div>
+      <div class="tile-grid" id="toonList"></div>
+
+      <div class="sec-h"><span>💛 찜한 작품</span><span class="cnt" id="toonWantCnt"></span></div>
+      <div class="rowlist" id="toonWant"></div>
+
+      <div class="sec-h"><span>✅ 내가 본 웹툰</span><span class="cnt" id="toonSeenCnt"></span></div>
+      <div class="rowlist" id="toonSeen"></div>
+
+      <form class="addbox" id="toonAddForm" autocomplete="off">
+        <input id="toonAddTitle" maxlength="30" placeholder="본 웹툰 제목 (예: 일렉시드)" aria-label="웹툰 제목">
+        <div class="ab-bot">
+          <input id="toonAddMemo" maxlength="40" placeholder="한줄 메모 (선택)" aria-label="한줄 메모">
+          <button class="ab-add" type="submit">추가</button>
+        </div>
+      </form>
+      <p class="foot-note">내가 본 목록과 찜은 이 기기에만 저장돼요.</p>
+    </section>
+
+    <!-- ═══ 데이트·놀거리 방 ═══ -->
+    <section class="screen" id="screen-date" role="tabpanel" aria-label="데이트 놀거리 방">
+      <div class="room-hero">
+        <span class="rh-badge">🧂 소금이의 놀거리 방</span>
+        <h2>오빠랑 뭐 하고 놀지?</h2>
+        <p>가고 싶은 걸 모아 두고, 못 고르겠으면 뽑기로 정해요.</p>
+        <span class="rh-emo" aria-hidden="true">🎡</span>
+      </div>
+
+      <div class="seg" id="dateCats" role="group" aria-label="놀거리 카테고리"></div>
+
+      <div class="pick" id="datePick">
+        <span class="pk-emo">🎡</span>
+        <div class="pk-name">아직 안 골랐어요</div>
+        <div class="pk-desc">아래 버튼을 누르면 오늘 할 놀거리를 골라 드려요</div>
+      </div>
+      <div class="btn-row"><button class="btn-add" type="button" id="dateDraw">🎡 놀거리 뽑기</button></div>
+
+      <div class="seg" id="dateViews" role="group" aria-label="놀거리 보기"></div>
+      <div class="rowlist" id="dateList"></div>
+
+      <div class="sec-h"><span>➕ 새 놀거리 추가</span><span class="cnt">방탈출 테마도 여기서</span></div>
+      <form class="addbox" id="dateAddForm" autocomplete="off">
+        <input id="dateAddTitle" maxlength="28" placeholder="예: 한강 피크닉" aria-label="새 놀거리 이름">
+        <div class="ab-bot">
+          <select id="dateAddCat" aria-label="놀거리 카테고리"></select>
+          <button class="ab-add" type="submit">추가</button>
+        </div>
+      </form>
+      <p class="foot-note">목록과 후기는 이 기기에만 저장돼요.</p>
+    </section>
+
     <div class="page-foot"><span id="pageFoot"></span> · <button type="button" id="logoutBtn" class="linkbtn">로그아웃</button></div>
   </main>
 </div>
@@ -491,6 +757,18 @@
   </div>
   <div class="sheet-body">
   </div>
+</div>
+
+<!-- ═══ 메뉴·웹툰·놀거리 자세히 보기 시트 ═══ -->
+<div class="backdrop" id="infoBackdrop"></div>
+<div class="sheet" id="infoSheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle" aria-hidden="true">
+  <div class="sheet-head">
+    <div class="grab"></div>
+    <h3 id="infoTitle">자세히</h3>
+    <p id="infoSub"></p>
+    <button class="sheet-close" id="infoClose" type="button" aria-label="닫기">✕</button>
+  </div>
+  <div class="sheet-body" id="infoBody"></div>
 </div>
 
 <script type="module">
@@ -563,6 +841,13 @@ function activate(id) {
     b.setAttribute("aria-selected", on ? "true" : "false");
   });
   if (id === "screen-schedule") renderSchedule();
+  if (id === "screen-food") renderFood();
+  if (id === "screen-webtoon") renderToon();
+  if (id === "screen-date") renderDate();
+  const onTab = tabs.filter((b) => b.getAttribute("data-screen") === id)[0];
+  if (onTab && onTab.scrollIntoView) {
+    try { onTab.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" }); } catch (e) {}
+  }
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 tabs.forEach((btn) => btn.addEventListener("click", () => activate(btn.getAttribute("data-screen"))));
@@ -772,6 +1057,758 @@ memoList.addEventListener("click", async (e) => {
   const btn = e.target.closest ? e.target.closest(".del") : null;
   if (!btn) return;
   try { await deleteDoc(doc(db, "memos", btn.getAttribute("data-id"))); } catch (err) {}
+});
+
+/* ══════════════════ 새 방: 음식 · 웹툰 · 놀거리 ══════════════════ */
+const toastEl = document.createElement("div");
+toastEl.className = "toast";
+document.body.appendChild(toastEl);
+let toastTimer = 0;
+function toast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove("show"), 1900);
+}
+function arr(v) { return Array.isArray(v) ? v : []; }
+function lsJson(key, fb) {
+  try {
+    const v = JSON.parse(window.localStorage.getItem(key) || "null");
+    return v && typeof v === "object" ? v : fb;
+  } catch (e) { return fb; }
+}
+function lsSave(key, val) { try { window.localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
+function newId() { return "n" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text !== undefined && text !== null) n.textContent = text;
+  return n;
+}
+function starRow(rate, onPick) {
+  const wrap = el("div", "stars");
+  for (let i = 1; i <= 5; i++) {
+    const b = el("button", "star" + (i <= rate ? " on" : ""), i <= rate ? "★" : "☆");
+    b.type = "button";
+    b.setAttribute("aria-label", i + "점");
+    b.addEventListener("click", () => onPick(i));
+    wrap.appendChild(b);
+  }
+  return wrap;
+}
+
+/* ── 공용: 자세히 보기 시트 ── */
+const infoSheet = $("#infoSheet");
+const infoBackdrop = $("#infoBackdrop");
+const infoBody = $("#infoBody");
+const infoTitle = $("#infoTitle");
+const infoSub = $("#infoSub");
+function openInfo(title, sub, node) {
+  infoTitle.textContent = title;
+  infoSub.textContent = sub || "";
+  infoBody.innerHTML = "";
+  if (node) infoBody.appendChild(node);
+  infoBody.scrollTop = 0;
+  infoSheet.classList.add("open");
+  infoSheet.setAttribute("aria-hidden", "false");
+  infoBackdrop.classList.add("show");
+  document.body.classList.add("locked");
+}
+function closeInfo() {
+  infoSheet.classList.remove("open");
+  infoSheet.setAttribute("aria-hidden", "true");
+  infoBackdrop.classList.remove("show");
+  if (!$("#roomSheet").classList.contains("open")) document.body.classList.remove("locked");
+}
+$("#infoClose").addEventListener("click", closeInfo);
+infoBackdrop.addEventListener("click", closeInfo);
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeInfo(); });
+
+/* ── 공용: 두근두근 뽑기 ── */
+function spinPick(opt) {
+  const box = opt.box;
+  const cands = opt.cands;
+  const finish = (m) => {
+    opt.paint(m, "done");
+    if (opt.btn) opt.btn.textContent = opt.doneText || "🔄 다시 뽑기";
+    if (opt.onDone) opt.onDone(m);
+  };
+  const first = cands[Math.floor(Math.random() * cands.length)];
+  if (!motionOn) { finish(first); return; }
+  box.className = "pick rolling";
+  let n = 0;
+  const step = () => {
+    const m = cands[Math.floor(Math.random() * cands.length)];
+    box.innerHTML = "";
+    box.appendChild(el("span", "pk-emo", m.em || m.emoji || "🎡"));
+    box.appendChild(el("div", "pk-name", m.name || m.t || m.title || ""));
+    n += 1;
+    if (n < 16) {
+      setTimeout(step, 42 + n * 10);
+    } else {
+      finish(cands[Math.floor(Math.random() * cands.length)]);
+      try { if (navigator.vibrate) navigator.vibrate(30); } catch (e) {}
+    }
+  };
+  step();
+}
+
+/* ══════════════ 🍽️ 음식 방 ══════════════ */
+const FOOD_KEY = "salt-food-room-v1";
+const FOOD_CATS = [
+  { k: "all", e: "🍽️", l: "전체" },
+  { k: "spicy", e: "🌶️", l: "매콤" },
+  { k: "meat", e: "🥩", l: "든든·고기" },
+  { k: "night", e: "🍗", l: "야식·치킨" },
+  { k: "noodle", e: "🍜", l: "간단·면" },
+  { k: "light", e: "🥗", l: "가볍게" }
+];
+const FOOD_MENUS = [
+  { id: "maratang", em: "🍲", name: "마라탕", cat: "spicy", desc: "자주 먹는 최애 메뉴", tip: "떡은 빼고, 면은 소면·중면 중에 골라요. 맵기는 2~3단계가 무난해요." },
+  { id: "maraxiang", em: "🔥", name: "마라샹궈", cat: "spicy", desc: "국물 없이 볶아 낸 마라", tip: "마라탕이 질릴 때. 밥 한 공기랑 같이 먹으면 딱이에요." },
+  { id: "yeop", em: "🍢", name: "엽기오뎅 (떡 없는 엽떡)", cat: "spicy", desc: "떡 대신 오뎅·어묵 위주", tip: "'엽떡은 오뎅파' — 떡 빼고 오뎅·삶은 달걀 추가로 주문해요." },
+  { id: "jjambbong", em: "🍜", name: "짬뽕", cat: "noodle", desc: "뜨끈한 얼큰 국물", tip: "불맛 나는 집이 좋아요. 면은 보통 양으로." },
+  { id: "makchang", em: "🥩", name: "막창", cat: "meat", desc: "고기 파티 단골", tip: "된장 소스에 찍어 먹고, 마지막엔 볶음밥까지." },
+  { id: "suyuk", em: "🥓", name: "삼겹·가브리살 수육", cat: "meat", desc: "삶아서 담백하게", tip: "가브리살이 더 부드러워요. 보쌈김치랑 같이." },
+  { id: "galbitang", em: "🍲", name: "갈비탕", cat: "meat", desc: "진한 국물에 밥 말아서", tip: "깍두기 필수. 고기 건더기 많은 집으로." },
+  { id: "jeyuk", em: "🥘", name: "제육볶음", cat: "meat", desc: "밥 도둑", tip: "쌈에 싸 먹으면 두 배. 계란후라이 추가." },
+  { id: "donkkaseu", em: "🍛", name: "돈까스", cat: "meat", desc: "바삭한 한 끼", tip: "소스는 따로 받아서 마지막까지 바삭하게." },
+  { id: "burger", em: "🍔", name: "버거", cat: "meat", desc: "간단하게 든든", tip: "감자튀김은 나눠 먹는 걸로." },
+  { id: "friedrice", em: "🍚", name: "볶음밥", cat: "meat", desc: "집에서도 간단", tip: "김치볶음밥엔 계란후라이 하나." },
+  { id: "chicken", em: "🍗", name: "치킨", cat: "night", desc: "야식·모임 단골", tip: "후라이드 반, 양념 반. 무는 꼭 같이." },
+  { id: "golbaengi", em: "🐚", name: "골뱅이무침", cat: "night", desc: "야식·모임 단골", tip: "소면 사리 추가하면 한 끼가 돼요." },
+  { id: "jokbal", em: "🐷", name: "족발·보쌈", cat: "night", desc: "야식으로 든든하게", tip: "막국수 사리까지 있으면 완벽." },
+  { id: "pho", em: "🍜", name: "쌀국수", cat: "noodle", desc: "뜨끈하고 깔끔한 국물", tip: "고수는 빼고, 숙주는 넉넉히." },
+  { id: "kalguksu", em: "🍲", name: "칼국수", cat: "noodle", desc: "뜨끈한 국물", tip: "만두 사리 추가. 김치랑 같이." },
+  { id: "udon", em: "🍜", name: "우동", cat: "noodle", desc: "부드럽게 넘어가는 한 끼", tip: "튀김 하나 곁들이면 딱." },
+  { id: "janchi", em: "🍲", name: "잔치국수", cat: "noodle", desc: "가볍게 국물", tip: "양념장은 조금씩 넣어 가며." },
+  { id: "pasta", em: "🍝", name: "파스타", cat: "noodle", desc: "기분 전환용 한 끼", tip: "크림이랑 토마토 중에 고르기. 빵 추가." },
+  { id: "gimbap", em: "🍙", name: "김밥", cat: "light", desc: "가볍게 한 끼", tip: "참치김밥 + 라면 조합이 무난해요." },
+  { id: "sandwich", em: "🥪", name: "샌드위치·샐러드", cat: "light", desc: "가볍게", tip: "소스는 따로. 속은 든든하게." },
+  { id: "toast", em: "🍞", name: "길거리 토스트", cat: "light", desc: "간단하고 든든", tip: "계란·치즈 추가가 기본." },
+  { id: "juk", em: "🥣", name: "죽", cat: "light", desc: "속 편한 한 끼", tip: "전복죽이나 야채죽. 반찬은 가볍게." }
+];
+const FOOD_FAVS = [
+  { key: "mara", emoji: "🍲", title: "마라탕", sub: "자주 먹는 최애", ids: ["maratang", "maraxiang"], note: "국물 마라탕과 볶은 마라샹궈 둘 다. 떡은 빼고, 면은 소면·중면으로 골라요." },
+  { key: "yeop", emoji: "🌶️", title: "떡 없는 엽떡", sub: "오뎅 위주로", ids: ["yeop"], note: "'엽떡은 오뎅파' — 떡 빼고 오뎅·어묵·삶은 달걀 추가로 주문해요." },
+  { key: "chicken", emoji: "🍗", title: "치킨 & 골뱅이무침", sub: "야식·모임 단골", ids: ["chicken", "golbaengi"], note: "치킨은 후라이드 반·양념 반, 골뱅이무침엔 소면 사리까지." },
+  { key: "meat", emoji: "🥩", title: "막창 · 수육", sub: "고기 파티", ids: ["makchang", "suyuk"], note: "막창은 된장 소스에, 수육은 가브리살이 더 부드러워요." },
+  { key: "noodle", emoji: "🍜", title: "쌀국수 · 칼국수 · 짬뽕", sub: "뜨끈한 국물", ids: ["pho", "kalguksu", "jjambbong"], note: "국물이 당기는 날은 이 셋 중에 하나로 정하면 돼요." },
+  { key: "etc", emoji: "🍔", title: "버거 · 파스타 · 볶음밥", sub: "간단하게 든든", ids: ["burger", "pasta", "friedrice"], note: "요리하기 귀찮은 날 손쉬운 셋. 배달도 금방 와요." }
+];
+let foodState = Object.assign({ off: [], custom: [], memo: "", last: "" }, lsJson(FOOD_KEY, {}));
+let foodCat = "all";
+let foodRolling = false;
+function foodSave() { lsSave(FOOD_KEY, foodState); }
+function foodAll() {
+  const base = FOOD_MENUS.map((m) => Object.assign({}, m));
+  const mine = arr(foodState.custom).map((c) => ({
+    id: c.id, em: "🍽️", name: c.name, cat: c.cat, custom: true,
+    desc: "내가 추가한 메뉴", tip: "직접 추가한 메뉴예요. 필요 없으면 목록에서 지우면 돼요."
+  }));
+  return base.concat(mine);
+}
+function foodCatText(k) {
+  const c = FOOD_CATS.filter((x) => x.k === k)[0];
+  return c ? c.e + " " + c.l : "🍽️ 기타";
+}
+function foodCands() {
+  const off = arr(foodState.off);
+  return foodAll().filter((m) => (foodCat === "all" || m.cat === foodCat) && off.indexOf(m.id) < 0);
+}
+function foodPaint(m, mode) {
+  const box = $("#foodPick");
+  if (!box) return;
+  box.className = "pick" + (mode ? " " + mode : "");
+  box.innerHTML = "";
+  if (!m) {
+    box.appendChild(el("span", "pk-emo", "🍽️"));
+    box.appendChild(el("div", "pk-name", "아직 안 골랐어요"));
+    box.appendChild(el("div", "pk-desc", foodCands().length ? "아래 버튼을 누르면 오늘 먹을 메뉴를 골라 드려요" : "이 카테고리 후보가 다 빠져 있어요. 다른 카테고리로 골라 보세요"));
+    return;
+  }
+  box.appendChild(el("span", "pk-tag", foodCatText(m.cat)));
+  box.appendChild(el("span", "pk-emo", m.em));
+  box.appendChild(el("div", "pk-name", m.name));
+  if (m.desc) box.appendChild(el("div", "pk-desc", m.desc));
+  if (m.tip) box.appendChild(el("div", "pk-tip", "💡 " + m.tip));
+}
+function renderFoodCats() {
+  const wrap = $("#foodCats");
+  wrap.innerHTML = "";
+  FOOD_CATS.forEach((c) => {
+    const b = el("button", "segbtn" + (foodCat === c.k ? " on" : ""), c.e + " " + c.l);
+    b.type = "button";
+    b.setAttribute("aria-pressed", foodCat === c.k ? "true" : "false");
+    b.addEventListener("click", () => { foodCat = c.k; renderFoodCats(); foodPaint(null, ""); });
+    wrap.appendChild(b);
+  });
+}
+function foodRow(m, canDelete) {
+  const on = arr(foodState.off).indexOf(m.id) < 0;
+  const row = el("div", "frow" + (on ? "" : " off"));
+  row.appendChild(el("span", "f-emo", m.em));
+  const main = el("div", "f-main");
+  const name = el("div", "f-name", m.name);
+  if (m.custom) name.appendChild(el("span", "pill wait", "내가 추가"));
+  main.appendChild(name);
+  main.appendChild(el("div", "f-sub", m.desc || ""));
+  row.appendChild(main);
+  const sw = el("button", "tsw" + (on ? " on" : ""));
+  sw.type = "button";
+  sw.setAttribute("role", "switch");
+  sw.setAttribute("aria-checked", on ? "true" : "false");
+  sw.setAttribute("aria-label", m.name + " 추첨 후보 포함");
+  sw.addEventListener("click", () => {
+    const i = arr(foodState.off).indexOf(m.id);
+    if (i >= 0) foodState.off.splice(i, 1); else foodState.off.push(m.id);
+    foodSave();
+    const nowOn = arr(foodState.off).indexOf(m.id) < 0;
+    row.classList.toggle("off", !nowOn);
+    sw.classList.toggle("on", nowOn);
+    sw.setAttribute("aria-checked", nowOn ? "true" : "false");
+    foodRefreshCount();
+    renderFoodFavs();
+  });
+  row.appendChild(sw);
+  if (canDelete) {
+    const del = el("button", "fdel", "✕");
+    del.type = "button";
+    del.setAttribute("aria-label", m.name + " 삭제");
+    del.addEventListener("click", () => {
+      foodState.custom = arr(foodState.custom).filter((c) => c.id !== m.id);
+      foodSave();
+      renderFoodList();
+      renderFoodFavs();
+      toast("목록에서 지웠어요");
+    });
+    row.appendChild(del);
+  }
+  return row;
+}
+function foodRefreshCount() {
+  const all = foodAll();
+  const on = all.filter((m) => arr(foodState.off).indexOf(m.id) < 0).length;
+  const list = $("#foodList");
+  $("#foodCandCnt").textContent = on + "/" + all.length + "개 후보 " + (list && !list.hidden ? "접기 ▴" : "펼치기 ▾");
+}
+function renderFoodFavs() {
+  const wrap = $("#foodFavs");
+  wrap.innerHTML = "";
+  const all = foodAll();
+  FOOD_FAVS.forEach((g) => {
+    const list = g.ids.map((id) => all.filter((m) => m.id === id)[0]).filter(Boolean);
+    const on = list.filter((m) => arr(foodState.off).indexOf(m.id) < 0).length;
+    const b = el("button", "tile");
+    b.type = "button";
+    b.appendChild(el("span", "t-emo", g.emoji));
+    b.appendChild(el("span", "t-name", g.title));
+    b.appendChild(el("span", "t-sub", g.sub));
+    b.appendChild(el("span", "t-meta", list.length + "개 메뉴 · 후보 " + on));
+    b.addEventListener("click", () => openFoodGroup(g));
+    wrap.appendChild(b);
+  });
+}
+function openFoodGroup(g) {
+  const wrap = el("div");
+  wrap.appendChild(el("div", "d-box", g.note));
+  g.ids.forEach((id) => {
+    const m = foodAll().filter((x) => x.id === id)[0];
+    if (m) wrap.appendChild(foodRow(m, false));
+  });
+  wrap.appendChild(el("p", "foot-note", "스위치를 끄면 추첨 후보에서 빠져요."));
+  openInfo(g.emoji + " " + g.title, g.sub, wrap);
+}
+function renderFoodList() {
+  const wrap = $("#foodList");
+  wrap.innerHTML = "";
+  const all = foodAll();
+  all.forEach((m) => wrap.appendChild(foodRow(m, !!m.custom)));
+  foodRefreshCount();
+}
+function renderFood() {
+  renderFoodCats();
+  renderFoodFavs();
+  renderFoodList();
+  const sel = $("#foodAddCat");
+  if (sel && !sel.options.length) {
+    FOOD_CATS.filter((c) => c.k !== "all").forEach((c) => {
+      const o = document.createElement("option");
+      o.value = c.k; o.textContent = c.e + " " + c.l;
+      sel.appendChild(o);
+    });
+  }
+  const memoEl = $("#foodMemo");
+  if (memoEl && document.activeElement !== memoEl) memoEl.value = foodState.memo || "";
+  const last = foodState.last ? foodAll().filter((m) => m.id === foodState.last)[0] : null;
+  foodPaint(last || null, last ? "done" : "");
+  $("#foodDraw").textContent = last ? "🔄 다시 뽑기" : "🍜 메뉴 뽑기";
+}
+$("#foodDraw").addEventListener("click", () => {
+  if (foodRolling) return;
+  const cands = foodCands();
+  if (!cands.length) { toast("이 카테고리엔 뽑을 메뉴가 없어요"); return; }
+  foodRolling = true;
+  $("#foodDraw").textContent = "두근두근…";
+  spinPick({
+    box: $("#foodPick"), cands: cands, paint: foodPaint, btn: $("#foodDraw"), doneText: "🔄 다시 뽑기",
+    onDone: (m) => { foodState.last = m.id; foodSave(); foodRolling = false; }
+  });
+});
+$("#foodMemo").addEventListener("input", (e) => {
+  foodState.memo = String(e.target.value || "").slice(0, 120);
+  foodSave();
+});
+$("#foodAddForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const nameEl = $("#foodAddName");
+  const name = nameEl.value.trim();
+  if (!name) { nameEl.focus(); return; }
+  foodState.custom = arr(foodState.custom).concat([{ id: newId(), name: name.slice(0, 20), cat: $("#foodAddCat").value || "meat" }]);
+  foodSave();
+  nameEl.value = "";
+  $("#foodList").hidden = false;
+  renderFoodList();
+  renderFoodFavs();
+  toast("추첨 후보에 넣었어요");
+});
+$("#foodCandToggle").addEventListener("click", () => {
+  const list = $("#foodList");
+  list.hidden = !list.hidden;
+  $("#foodCandToggle").setAttribute("aria-expanded", list.hidden ? "false" : "true");
+  foodRefreshCount();
+});
+$("#foodCandToggle").addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("#foodCandToggle").click(); }
+});
+
+/* ══════════════ 📚 웹툰 방 ══════════════ */
+const TOON_KEY = "salt-toon-room-v1";
+const TOON_GENRES = [
+  { k: "all", e: "📚", l: "전체" },
+  { k: "fantasy", e: "⚡", l: "판타지·액션 케미" },
+  { k: "romance", e: "🌹", l: "로판" },
+  { k: "done", e: "✅", l: "완결 정주행" }
+];
+const TOONS = [
+  { id: "orv", em: "📖", t: "전지적 독자 시점", g: "fantasy", done: false, st: "연재 중 · 장기", sum: "멸망한 소설 속으로 빨려 들어간 독자가 결말을 바꾸려고 움직여요.", point: "동료들 케미와 사이다 전개. 회차가 아주 넉넉해요." },
+  { id: "hs", em: "🗡️", t: "화산귀환", g: "fantasy", done: false, st: "연재 중 · 장기", sum: "화산파의 마지막 제자가 깨어나 무너진 문파를 다시 일으켜요.", point: "코믹한 케미와 시원한 전개. 가볍게 정주행하기 좋아요." },
+  { id: "solo", em: "⚔️", t: "나 혼자만 레벨업", g: "fantasy", done: true, st: "완결 · 179화", sum: "최약체 헌터가 혼자만의 성장 시스템으로 최강이 되어 가요.", point: "군더더기 없이 시원한 성장물. 완결이라 끝까지 달려요." },
+  { id: "sss", em: "💀", t: "SSS급 죽어야 사는 헌터", g: "fantasy", done: false, st: "연재 중 · 회차 넉넉", sum: "죽어야만 강해지는 헌터가 반복 회귀하며 성장해요.", point: "유쾌한 사이다 전개. 웃으면서 보기 좋아요." },
+  { id: "estate", em: "🏰", t: "역대급 영지 설계사", g: "fantasy", done: false, st: "연재 중 · 회차 넉넉", sum: "망한 영지를 살리려는 영주와 설계사가 함께 판을 키워요.", point: "경영·성장 쾌감에 인물 케미까지." },
+  { id: "remarried", em: "👑", t: "재혼 황후", g: "romance", done: true, st: "본편 완결 · 외전 연재", sum: "황후 자리에서 물러난 여주가 다른 제국의 황후로 다시 서요.", point: "본편 247화 완결. 로판 입문·정주행 둘 다 좋아요." },
+  { id: "house", em: "🗝️", t: "이번 생은 가주가 되겠습니다", g: "romance", done: false, st: "연재 중 · 240화+", sum: "망해 가는 가문에 환생한 주인공이 이번 생엔 가주가 되려 해요.", point: "회귀·환생 로판. 회차가 아주 넉넉해요." },
+  { id: "villain", em: "🖤", t: "악역의 엔딩은 죽음뿐", g: "romance", done: true, st: "완결", sum: "악역으로 빙의한 주인공이 죽음 엔딩을 피하려 고군분투해요.", point: "로판 빙의물의 대표작. 완결로 끝까지 볼 수 있어요." },
+  { id: "princess", em: "👗", t: "어느 날 공주가 되어버렸다", g: "romance", done: true, st: "완결", sum: "소설 속 공주가 된 주인공이 원작과 다른 길을 걸어요.", point: "달달한 로판 정주행용. 완결." },
+  { id: "duke", em: "🏛️", t: "그녀가 공작저로 가야 했던 사정", g: "romance", done: true, st: "완결", sum: "공작저에 들어가게 된 주인공의 계약 로맨스.", point: "가볍게 달리는 로판 완결작." },
+  { id: "cheese", em: "🎨", t: "치즈인더트랩", g: "daily", done: true, st: "완결", sum: "대학가를 배경으로 사람들 관계의 진짜 속내를 그려요.", point: "케미와 심리 묘사가 촘촘해요. 완결." },
+  { id: "yumi", em: "🧠", t: "유미의 세포들", g: "daily", done: true, st: "완결", sum: "머릿속 세포들이 이끄는 일상과 연애를 그려요.", point: "귀엽고 편하게 보기 좋은 완결작." }
+];
+let toonState = Object.assign({ seen: [{ id: "seed1", title: "일렉시드", rate: 5, memo: "유쾌하고 케미 살아 있는 최애!" }], want: [] }, lsJson(TOON_KEY, {}));
+let toonGenre = "all";
+let toonLastId = "";
+function toonSave() { lsSave(TOON_KEY, toonState); }
+function toonGenreText(g) { return g === "romance" ? "🌹 로판" : g === "fantasy" ? "⚡ 판타지·액션" : "🌿 일상"; }
+function toonFiltered() {
+  if (toonGenre === "done") return TOONS.filter((t) => t.done);
+  if (toonGenre === "all") return TOONS.slice();
+  return TOONS.filter((t) => t.g === toonGenre);
+}
+function isWanted(id) { return arr(toonState.want).indexOf(id) >= 0; }
+function toggleWant(id) {
+  const list = arr(toonState.want);
+  const i = list.indexOf(id);
+  if (i >= 0) list.splice(i, 1); else list.push(id);
+  toonState.want = list;
+  toonSave();
+}
+function wantLabel(t) { return isWanted(t.id) ? "💛 찜했어요" : "🤍 찜하기"; }
+function renderToonGenres() {
+  const wrap = $("#toonGenres");
+  wrap.innerHTML = "";
+  TOON_GENRES.forEach((g) => {
+    const b = el("button", "segbtn" + (toonGenre === g.k ? " on" : ""), g.e + " " + g.l);
+    b.type = "button";
+    b.setAttribute("aria-pressed", toonGenre === g.k ? "true" : "false");
+    b.addEventListener("click", () => { toonGenre = g.k; toonLastId = ""; renderToonGenres(); renderToonTiles(); toonPaint(null, ""); $("#toonDraw").textContent = "🎲 웹툰 뽑기"; });
+    wrap.appendChild(b);
+  });
+}
+function toonPaint(t, mode) {
+  const box = $("#toonPick");
+  if (!box) return;
+  box.className = "pick" + (mode ? " " + mode : "");
+  box.innerHTML = "";
+  if (!t) {
+    box.appendChild(el("span", "pk-emo", "📚"));
+    box.appendChild(el("div", "pk-name", "아직 안 골랐어요"));
+    box.appendChild(el("div", "pk-desc", "아래 버튼을 누르면 오늘 볼 웹툰을 골라 드려요"));
+    return;
+  }
+  box.appendChild(el("span", "pk-tag", toonGenreText(t.g) + " · " + (t.done ? "완결" : "연재 중")));
+  box.appendChild(el("span", "pk-emo", t.em));
+  box.appendChild(el("div", "pk-name", t.t));
+  box.appendChild(el("div", "pk-desc", t.st + " · 눌러서 소개 보기"));
+}
+function renderToonTiles() {
+  const wrap = $("#toonList");
+  wrap.innerHTML = "";
+  const list = toonFiltered();
+  $("#toonCnt").textContent = list.length + "편";
+  if (!list.length) {
+    wrap.appendChild(el("div", "empty", "이 장르 추천은 아직 없어요"));
+    return;
+  }
+  list.forEach((t) => {
+    const b = el("button", "tile");
+    b.type = "button";
+    b.appendChild(el("span", "t-emo", t.em));
+    b.appendChild(el("span", "t-name", t.t));
+    b.appendChild(el("span", "t-sub", t.st));
+    b.appendChild(el("span", "t-meta", (isWanted(t.id) ? "💛 찜 · " : "") + toonGenreText(t.g)));
+    b.addEventListener("click", () => openToon(t));
+    wrap.appendChild(b);
+  });
+}
+function addSeen(title, memo) {
+  const name = String(title || "").trim();
+  if (!name) return;
+  const seen = arr(toonState.seen);
+  if (seen.some((s) => s.title === name)) { toast("이미 내 목록에 있어요"); return; }
+  seen.unshift({ id: newId(), title: name.slice(0, 30), rate: 0, memo: String(memo || "").slice(0, 40) });
+  toonState.seen = seen;
+  toonSave();
+  renderSeen();
+  toast("내가 본 목록에 담았어요");
+}
+function openToon(t) {
+  const wrap = el("div");
+  const tags = el("div", "d-tags");
+  tags.appendChild(el("span", "pill", toonGenreText(t.g)));
+  tags.appendChild(el("span", "pill " + (t.done ? "done" : "wait"), t.done ? "완결" : "연재 중"));
+  tags.appendChild(el("span", "pill wait", t.st));
+  wrap.appendChild(tags);
+  wrap.appendChild(el("p", "d-p", t.sum));
+  wrap.appendChild(el("div", "d-box", "📌 " + t.point));
+  const btns = el("div", "btn-row");
+  const addBtn = el("button", "btn-add", "내가 본 목록에 담기");
+  addBtn.type = "button";
+  addBtn.addEventListener("click", () => addSeen(t.t, ""));
+  const wantBtn = el("button", "btn-add" + (isWanted(t.id) ? "" : " ghost"), wantLabel(t));
+  wantBtn.type = "button";
+  wantBtn.addEventListener("click", () => {
+    toggleWant(t.id);
+    wantBtn.textContent = wantLabel(t);
+    wantBtn.classList.toggle("ghost", !isWanted(t.id));
+    renderToonWant();
+    renderToonTiles();
+  });
+  btns.appendChild(addBtn);
+  btns.appendChild(wantBtn);
+  wrap.appendChild(btns);
+  openInfo(t.em + " " + t.t, t.st, wrap);
+}
+function renderToonWant() {
+  const wrap = $("#toonWant");
+  wrap.innerHTML = "";
+  const list = TOONS.filter((t) => isWanted(t.id));
+  $("#toonWantCnt").textContent = list.length + "편";
+  if (!list.length) {
+    wrap.appendChild(el("div", "empty", "마음에 드는 작품을 💛 찜으로 담아 두세요"));
+    return;
+  }
+  list.forEach((t) => {
+    const row = el("div", "frow");
+    row.appendChild(el("span", "f-emo", t.em));
+    const main = el("div", "f-main");
+    main.appendChild(el("div", "f-name", t.t));
+    main.appendChild(el("div", "f-sub", t.st + " · " + t.point));
+    row.appendChild(main);
+    const del = el("button", "fdel", "✕");
+    del.type = "button";
+    del.setAttribute("aria-label", t.t + " 찜 해제");
+    del.addEventListener("click", () => { toggleWant(t.id); renderToonWant(); renderToonTiles(); });
+    row.appendChild(del);
+    wrap.appendChild(row);
+  });
+}
+function renderSeen() {
+  const wrap = $("#toonSeen");
+  wrap.innerHTML = "";
+  const list = arr(toonState.seen);
+  $("#toonSeenCnt").textContent = list.length + "편";
+  if (!list.length) {
+    wrap.appendChild(el("div", "empty", "아직 담은 작품이 없어요. 본 작품을 하나씩 넣어 보세요."));
+    return;
+  }
+  list.forEach((s) => {
+    const row = el("div", "frow");
+    row.appendChild(el("span", "f-emo", "📚"));
+    const main = el("div", "f-main");
+    main.appendChild(el("div", "f-name", s.title));
+    main.appendChild(starRow(Number(s.rate) || 0, (r) => { s.rate = r; toonSave(); renderSeen(); }));
+    main.appendChild(el("div", "f-sub", s.memo ? "💬 " + s.memo : "한줄 메모를 남겨 보세요"));
+    const editor = el("div", "mini-edit");
+    editor.hidden = true;
+    const inp = document.createElement("input");
+    inp.type = "text";
+    inp.maxLength = 40;
+    inp.value = s.memo || "";
+    inp.placeholder = "한줄 메모";
+    const sv = el("button", "mini-save", "저장");
+    sv.type = "button";
+    sv.addEventListener("click", () => {
+      s.memo = inp.value.trim().slice(0, 40);
+      toonSave();
+      renderSeen();
+      toast("메모를 저장했어요");
+    });
+    editor.appendChild(inp);
+    editor.appendChild(sv);
+    main.appendChild(editor);
+    row.appendChild(main);
+    const ed = el("button", "fdel", "✏️");
+    ed.type = "button";
+    ed.setAttribute("aria-label", s.title + " 메모 수정");
+    ed.addEventListener("click", () => { editor.hidden = !editor.hidden; if (!editor.hidden) inp.focus(); });
+    row.appendChild(ed);
+    const del = el("button", "fdel", "✕");
+    del.type = "button";
+    del.setAttribute("aria-label", s.title + " 삭제");
+    del.addEventListener("click", () => {
+      toonState.seen = arr(toonState.seen).filter((x) => x !== s);
+      toonSave();
+      renderSeen();
+      toast("목록에서 지웠어요");
+    });
+    row.appendChild(del);
+    wrap.appendChild(row);
+  });
+}
+function renderToon() {
+  renderToonGenres();
+  renderToonTiles();
+  renderToonWant();
+  renderSeen();
+  const last = toonLastId ? TOONS.filter((t) => t.id === toonLastId)[0] : null;
+  toonPaint(last || null, last ? "done" : "");
+  $("#toonDraw").textContent = last ? "🔄 다시 뽑기" : "🎲 웹툰 뽑기";
+}
+$("#toonDraw").addEventListener("click", () => {
+  const cands = toonFiltered();
+  if (!cands.length) { toast("이 장르엔 추천할 작품이 없어요"); return; }
+  $("#toonDraw").textContent = "두근두근…";
+  spinPick({
+    box: $("#toonPick"), cands: cands, paint: toonPaint, btn: $("#toonDraw"), doneText: "🔄 다시 뽑기",
+    onDone: (t) => { toonLastId = t.id; }
+  });
+});
+$("#toonPick").addEventListener("click", () => {
+  const t = toonLastId ? TOONS.filter((x) => x.id === toonLastId)[0] : null;
+  if (t) openToon(t);
+});
+$("#toonAddForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const titleEl = $("#toonAddTitle");
+  const title = titleEl.value.trim();
+  if (!title) { titleEl.focus(); return; }
+  addSeen(title, $("#toonAddMemo").value);
+  titleEl.value = "";
+  $("#toonAddMemo").value = "";
+});
+
+/* ══════════════ 🎡 데이트·놀거리 방 ══════════════ */
+const DATE_KEY = "salt-date-room-v1";
+const DATE_CATS = [
+  { k: "all", e: "🎡", l: "전체" },
+  { k: "park", e: "🎢", l: "놀이공원·테마파크" },
+  { k: "escape", e: "🔐", l: "방탈출" },
+  { k: "indoor", e: "🍿", l: "실내·이색" },
+  { k: "walk", e: "🚶", l: "산책·드라이브" }
+];
+const DATE_VIEWS = [
+  { k: "all", e: "📋", l: "전체" },
+  { k: "want", e: "🎯", l: "가고 싶어" },
+  { k: "done", e: "✅", l: "다녀왔어" }
+];
+const DATE_SEED = [
+  { id: "d1", em: "🎢", title: "놀이공원 (롯데월드·에버랜드)", cat: "park", sub: "교복·머리띠 맞춰 입고 하루 종일", done: false, rate: 0, memo: "" },
+  { id: "d2", em: "🔐", title: "방탈출 — 추리·스토리 테마", cat: "escape", sub: "공포 없는 테마로 고르기", done: false, rate: 0, memo: "" },
+  { id: "d3", em: "🕯️", title: "방탈출 — 감성 테마", cat: "escape", sub: "분위기 좋은 테마 + 카페까지", done: false, rate: 0, memo: "" },
+  { id: "d4", em: "🎬", title: "영화관 데이트", cat: "indoor", sub: "보고 싶은 영화 + 팝콘", done: false, rate: 0, memo: "" },
+  { id: "d5", em: "🎲", title: "보드게임 카페", cat: "indoor", sub: "가볍게 한 판, 경쟁은 살살", done: false, rate: 0, memo: "" },
+  { id: "d6", em: "🍜", title: "맛집 탐방 & 피크닉", cat: "walk", sub: "먹고 싶은 곳 하나 정해서 원정", done: false, rate: 0, memo: "" },
+  { id: "d7", em: "✨", title: "도쿄 디즈니씨 버킷리스트", cat: "park", sub: "가서 꼭 할 것 리스트 만들어 두기", done: false, rate: 0, memo: "" },
+  { id: "d8", em: "🚗", title: "드라이브 & 야경", cat: "walk", sub: "노을 시간에 출발", done: false, rate: 0, memo: "" },
+  { id: "d9", em: "🖼️", title: "전시·팝업 스토어", cat: "indoor", sub: "요즘 뜨는 전시 하나 골라 가기", done: false, rate: 0, memo: "" },
+  { id: "d10", em: "☕", title: "동네 산책 & 카페", cat: "walk", sub: "가볍게 걷고 커피 한 잔", done: false, rate: 0, memo: "" }
+];
+let dateState = Object.assign({ items: DATE_SEED.map((x) => Object.assign({}, x)) }, lsJson(DATE_KEY, {}));
+let dateCat = "all";
+let dateView = "all";
+let dateRolling = false;
+function dateSave() { lsSave(DATE_KEY, dateState); }
+function dateCatText(k) {
+  const c = DATE_CATS.filter((x) => x.k === k)[0];
+  return c ? c.e + " " + c.l : "🎡 기타";
+}
+function dateItems() { return arr(dateState.items); }
+function dateCands() {
+  return dateItems().filter((it) => !it.done && (dateCat === "all" || it.cat === dateCat));
+}
+function datePaint(it, mode) {
+  const box = $("#datePick");
+  if (!box) return;
+  box.className = "pick" + (mode ? " " + mode : "");
+  box.innerHTML = "";
+  if (!it) {
+    box.appendChild(el("span", "pk-emo", "🎡"));
+    box.appendChild(el("div", "pk-name", "아직 안 골랐어요"));
+    box.appendChild(el("div", "pk-desc", dateCands().length ? "아래 버튼을 누르면 오늘 할 놀거리를 골라 드려요" : "이 카테고리엔 아직 후보가 없어요. 새 놀거리를 추가해 보세요"));
+    return;
+  }
+  box.appendChild(el("span", "pk-tag", dateCatText(it.cat)));
+  box.appendChild(el("span", "pk-emo", it.em || "🎡"));
+  box.appendChild(el("div", "pk-name", it.title));
+  if (it.sub) box.appendChild(el("div", "pk-desc", it.sub));
+}
+function renderDateCats() {
+  const wrap = $("#dateCats");
+  wrap.innerHTML = "";
+  DATE_CATS.forEach((c) => {
+    const b = el("button", "segbtn" + (dateCat === c.k ? " on" : ""), c.e + " " + c.l);
+    b.type = "button";
+    b.setAttribute("aria-pressed", dateCat === c.k ? "true" : "false");
+    b.addEventListener("click", () => { dateCat = c.k; renderDateCats(); datePaint(null, ""); });
+    wrap.appendChild(b);
+  });
+}
+function renderDateViews() {
+  const wrap = $("#dateViews");
+  wrap.innerHTML = "";
+  DATE_VIEWS.forEach((v) => {
+    const b = el("button", "segbtn" + (dateView === v.k ? " on" : ""), v.e + " " + v.l);
+    b.type = "button";
+    b.setAttribute("aria-pressed", dateView === v.k ? "true" : "false");
+    b.addEventListener("click", () => { dateView = v.k; renderDateViews(); renderDateList(); });
+    wrap.appendChild(b);
+  });
+}
+function dateRow(it) {
+  const row = el("div", "frow" + (it.done ? " done" : ""));
+  row.appendChild(el("span", "f-emo", it.em || "🎡"));
+  const main = el("div", "f-main");
+  const name = el("div", "f-name", it.title);
+  if (it.done) name.appendChild(el("span", "pill done", "다녀옴"));
+  main.appendChild(name);
+  main.appendChild(el("div", "f-sub", dateCatText(it.cat) + (it.sub ? " · " + it.sub : "")));
+  row.appendChild(main);
+  if (it.done) {
+    main.appendChild(starRow(Number(it.rate) || 0, (r) => { it.rate = r; dateSave(); renderDateList(); }));
+    main.appendChild(el("div", "f-sub", it.memo ? "💬 " + it.memo : "한줄 후기를 남겨 보세요"));
+    const editor = el("div", "mini-edit");
+    editor.hidden = true;
+    const inp = document.createElement("input");
+    inp.type = "text";
+    inp.maxLength = 60;
+    inp.value = it.memo || "";
+    inp.placeholder = "한줄 후기";
+    const sv = el("button", "mini-save", "저장");
+    sv.type = "button";
+    sv.addEventListener("click", () => {
+      it.memo = inp.value.trim().slice(0, 60);
+      dateSave();
+      renderDateList();
+      toast("후기를 저장했어요");
+    });
+    editor.appendChild(inp);
+    editor.appendChild(sv);
+    main.appendChild(editor);
+    const ed = el("button", "fdel", "✏️");
+    ed.type = "button";
+    ed.setAttribute("aria-label", it.title + " 후기 수정");
+    ed.addEventListener("click", () => { editor.hidden = !editor.hidden; if (!editor.hidden) inp.focus(); });
+    row.appendChild(ed);
+  }
+  const sw = el("button", "tsw" + (it.done ? " on" : ""));
+  sw.type = "button";
+  sw.setAttribute("role", "switch");
+  sw.setAttribute("aria-checked", it.done ? "true" : "false");
+  sw.setAttribute("aria-label", it.title + " 다녀왔어요");
+  sw.addEventListener("click", () => {
+    it.done = !it.done;
+    dateSave();
+    renderDateList();
+    toast(it.done ? "다녀온 곳으로 기록했어요" : "가고 싶은 곳으로 되돌렸어요");
+  });
+  row.appendChild(sw);
+  const del = el("button", "fdel", "✕");
+  del.type = "button";
+  del.setAttribute("aria-label", it.title + " 삭제");
+  del.addEventListener("click", () => {
+    dateState.items = dateItems().filter((x) => x !== it);
+    dateSave();
+    renderDateList();
+    toast("목록에서 지웠어요");
+  });
+  row.appendChild(del);
+  return row;
+}
+function renderDateList() {
+  const wrap = $("#dateList");
+  wrap.innerHTML = "";
+  let list = dateItems();
+  if (dateView === "want") list = list.filter((x) => !x.done);
+  if (dateView === "done") list = list.filter((x) => x.done);
+  if (!list.length) {
+    wrap.appendChild(el("div", "empty", dateView === "done" ? "아직 다녀온 곳이 없어요. 다녀오면 스위치를 켜 보세요." : "목록이 비어 있어요. 아래에서 새 놀거리를 추가해 보세요."));
+    return;
+  }
+  list.forEach((it) => wrap.appendChild(dateRow(it)));
+}
+function renderDate() {
+  renderDateCats();
+  renderDateViews();
+  renderDateList();
+  datePaint(null, "");
+  $("#dateDraw").textContent = "🎡 놀거리 뽑기";
+  const sel = $("#dateAddCat");
+  if (sel && !sel.options.length) {
+    DATE_CATS.filter((c) => c.k !== "all").forEach((c) => {
+      const o = document.createElement("option");
+      o.value = c.k; o.textContent = c.e + " " + c.l;
+      sel.appendChild(o);
+    });
+  }
+}
+$("#dateDraw").addEventListener("click", () => {
+  if (dateRolling) return;
+  const cands = dateCands();
+  if (!cands.length) { toast("이 카테고리엔 갈 곳 후보가 없어요"); return; }
+  dateRolling = true;
+  $("#dateDraw").textContent = "두근두근…";
+  spinPick({
+    box: $("#datePick"), cands: cands, paint: datePaint, btn: $("#dateDraw"), doneText: "🔄 다시 뽑기",
+    onDone: () => { dateRolling = false; }
+  });
+});
+$("#dateAddForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const titleEl = $("#dateAddTitle");
+  const title = titleEl.value.trim();
+  if (!title) { titleEl.focus(); return; }
+  dateState.items = dateItems().concat([{ id: newId(), em: "🎡", title: title.slice(0, 28), cat: $("#dateAddCat").value || "indoor", sub: "", done: false, rate: 0, memo: "" }]);
+  dateSave();
+  titleEl.value = "";
+  dateView = "all";
+  renderDateViews();
+  renderDateList();
+  toast("위시리스트에 추가했어요");
+});
+
+/* ───────── 새 방 바로가기 ───────── */
+$$("#quickRooms button").forEach((b) => {
+  b.addEventListener("click", () => activate(b.getAttribute("data-screen")));
 });
 
 /* ───────── 로그인 상태에 따라 ───────── */
