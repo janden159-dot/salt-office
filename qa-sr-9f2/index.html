@@ -2054,11 +2054,15 @@ $$("#quickRooms button").forEach((b) => {
     });
     document.body.appendChild(wrap);
     modalEl = wrap;
+    window.__dbg = window.__dbg || [];
+    window.__dbg.push(["modal-appended"]);
     const firstInp = fields.length ? inputs[fields[0].key] : null;
     if (firstInp) setTimeout(function () { try { firstInp.focus(); } catch (e) {} }, 60);
   }
 
   function enter() {
+    window.__dbg = window.__dbg || [];
+    window.__dbg.push(["enter", !!(window.localStorage.getItem("sr-v1-hash"))]);
     if (opened) return;
     if (gate && gate.classList.contains("show")) return;
     if (lsGet(KEY.hash)) startUnlock();
@@ -2531,12 +2535,15 @@ $$("#quickRooms button").forEach((b) => {
   /* ── 숨은 진입: 제목(로고+텍스트) 3번 두드리기 ── */
   let taps = [];
   function onTap(e) {
+    window.__dbg = window.__dbg || [];
+    window.__dbg.push(["tap", opened, gate ? gate.className : "none", taps.length]);
     if (opened) return;
     if (gate && gate.classList.contains("show")) return;
     const now = Date.now();
     taps = taps.filter(function (t) { return now - t < TAP_MS; });
     taps.push(now);
     if (taps.length >= 3) {
+      window.__dbg.push(["fire"]);
       taps = [];
       if (e && e.cancelable) { try { e.preventDefault(); } catch (x) {} }
       enter();
