@@ -2029,7 +2029,8 @@ $$("#quickRooms button").forEach((b) => {
     form.appendChild(row);
     card.appendChild(form);
     wrap.appendChild(card);
-    wrap.addEventListener("click", function (e) { if (e.target === wrap) closeModal(); });
+    /* 모달을 연 손가락의 click이 오버레이에 닿아 바로 닫히지 않도록 pointerdown으로만 닫아요 */
+    wrap.addEventListener("pointerdown", function (e) { if (e.target === wrap) closeModal(); });
     cancel.addEventListener("click", function () { closeModal(); });
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
